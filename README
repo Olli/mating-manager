@@ -5,10 +5,18 @@ Provides a simple helper to get an HTML select list of countries.  The list of c
 
 Users are strongly advised to evaluate the suitability of this list given their user base.
 
-Example
+This version supports saving the country abbreviation in the database, and has abstracted the list of countries out into a Geography module. This way, you can use this list in your models:
+
+class Address < ActiveRecord::Base
+
+    validates_inclusion_of :country, :in => Geography::COUNTRY_CODES
+
+end
+
+View Example
 =======
 
-country_select("user", "country_name")
+country_select("user", 'US', 'CA')
 
 
 Copyright (c) 2008 Michael Koziarski, released under the MIT license
