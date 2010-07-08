@@ -16,7 +16,7 @@ end
 View Example
 =======
 
-country_select("user", 'US', 'CA')
+country_select(:user, :country, ["AU", "NZ"], :prompt => true, :value => user.country)
 
 
 Copyright (c) 2008 Michael Koziarski, released under the MIT license
