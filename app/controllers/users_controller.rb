@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = I18n.t('usermanagement.signed_up') + "!"
+      flash[:notice] = I18n.t(:signed_up,:scope => :usermanagement) + "!"
     else
       render "new"
     end

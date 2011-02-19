@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Testapinary1
+  lat: 9.99
+  lon: 9.99
+  address: MyText
+  free_places: 0
+  used_places: 50
+
+two:
+  name: Testapinary2
+  lat: 9.99
+  lon: 9.99
+  address: MyText
+  free_places: 10
+  used_places: 15
