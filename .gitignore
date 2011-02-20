@@ -4,3 +4,4 @@ tmp/
 log/
 config/initializers/secret_token.rb
 db/schema.rb
+.sass-cache/
