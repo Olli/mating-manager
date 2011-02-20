@@ -1,0 +1,77 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+
+@mixin rounded-top {
+  
+  $radius: 5px;
+
+  border-topleft-radius: $radius;
+  border-topright-radius: $radius;
+  -moz-border-radius-topleft: $radius;  
+  -moz-border-radius-topright: $radius;
+  -webkit-border-topleft-radius: $radius;
+  -webkit-border-topright-radius: $radius;
+}
+
+@mixin shadow {
+  $x: 0px;
+  $y: 0px;
+  $radius: 5px;
+  $color: #d5d5d5;
+  box-shadow: $x $y $radius $color;
+  -moz-box-shadow: $x $y $radius $color;
+  -webkit-box-shadow: $x $y $radius $color;
+}
+
+
+/* global definitions */
+
+$blue: #3197ce;
+
+html {
+  font-size: 16px;
+  font-family: "Trebuchet MS", Arial, Verdana;
+}
+
+body {
+  
+}
+
+/* classes */
+
+
+
+
+/* ids */
+
+#container {
+  @include shadow;
+  @include rounded-top;
+  width: 980px;
+  margin: 10px auto;
+  
+}
+
+
+#header {
+  
+  @include rounded-top;
+  background: $blue url("/images/header.png") top left no-repeat;
+  height: 145px;
+  span {
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 50px;
+    margin: auto;
+    padding-top: 22px;
+    width: 275px;
+  }
+}
+
