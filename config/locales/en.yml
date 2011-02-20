@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  i18n:
+    plural:
+      keys:
+        - test
