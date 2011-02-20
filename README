@@ -1,3 +1,4 @@
+*** Idea
 Mating-Manager is intended to be a manager application for managing 
 mating apinaries.
 It should help the manager of an mating apinary to schedule the arrival and leave of
@@ -19,3 +20,6 @@ planned to have a simple way to translate the applications output.
 Every mating apinary should have blog like newsfeed and a calendar.
 
 This copy of the application is under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+
+** For Developer
+You should read about SASS (http://www.sass-lang.com) and the Compass GEM (http://compass-style.org)
