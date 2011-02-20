@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(:version => 20110205182113) do
 
-  create_table "mating_apinaries", :force => true do |t|
+  create_table "mating_apiaries", :force => true do |t|
     t.string   "name"
     t.decimal  "lat",         :precision => 10, :scale => 0
     t.decimal  "lon",         :precision => 10, :scale => 0

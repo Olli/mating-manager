@@ -1,6 +1,6 @@
-class CreateMatingApinaries < ActiveRecord::Migration
+class CreateMatingApiaries < ActiveRecord::Migration
   def self.up
-    create_table :mating_apinaries do |t|
+    create_table :mating_apiaries do |t|
       t.string  :name
       t.decimal :lat
       t.decimal :lon
@@ -13,6 +13,6 @@ class CreateMatingApinaries < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :mating_apinaries
+    drop_table :mating_apiaries
   end
 end
