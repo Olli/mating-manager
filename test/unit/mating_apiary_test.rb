@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class MatingApinaryTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+class MatingApiaryTest < ActiveSupport::TestCase
+  should have_many(:deliverers)  
+  should have_many(:places)
+  should have_many(:used_places)
+
 end

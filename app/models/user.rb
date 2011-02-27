@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :deliverers
+  
   attr_accessible :email, :password, :password_confirmation
 
   attr_accessor :password

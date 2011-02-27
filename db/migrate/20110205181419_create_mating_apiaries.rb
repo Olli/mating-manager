@@ -5,9 +5,6 @@ class CreateMatingApiaries < ActiveRecord::Migration
       t.decimal :lat
       t.decimal :lon
       t.text    :address
-      t.integer :free_places
-      t.integer :used_places
-  
       t.timestamps
     end
   end
