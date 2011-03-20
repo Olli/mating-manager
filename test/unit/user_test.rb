@@ -12,7 +12,7 @@ class UserTest < Test::Unit::TestCase
       @user = User.first
     end
     should "validate password" do
-      assert_equal @user, User.authenticate("test@test.com","test").class
+      assert_equal @user.class, User.authenticate("test@test.com","test").class
     end
     should "not validate password" do
       assert_equal nil, User.authenticate("test@test.com","test1")
