@@ -1,0 +1,44 @@
+<h1><%= t(:mating_apinaries, :scope => :mating_apiary)%></h1>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        &nbsp;
+      </th>
+      <th>
+        &nbsp;
+      </th>      
+    </tr>
+    <tr>
+      <th>
+        <%= link_to icon_tag("book--plus"), new_admin_mating_apiary_path, :title => t(:create_new, :scope=> :mating_apiary) %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @mating_apiaries.each do |mating_apiary| %>
+    <tr>
+      <td>
+        <%= link_to mating_apiary.name, edit_admin_mating_apiary_path(mating_apiary) %>
+      </td>
+      <td>
+        <%= link_to icon_tag("book--pencil"), edit_admin_mating_apiary_path(mating_apiary), :title => t(:edit) %>
+      </td>        
+      <td>
+        <%= link_to icon_tag("book--minus"), admin_mating_apiary_path(mating_apiary), :title => t(:delete), :method => :delete %>
+      </td>        
+      
+    </tr>
+  <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <%= link_to icon_tag("book--plus"), new_admin_mating_apiary_path, :title => t(:create_new, :scope=> :mating_apiary) %>
+      </td>
+    </tr>
+  </tfoot>
+</table>

@@ -2,8 +2,23 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+
   i18n:
     plural:
-      keys:
-        - test
+      keys: [:zero, :one, :other]
+
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+
+  mating_apiary:
+    mating_apinaries: "Mating apiaries"
+    create_new: "Create a new mating apiary"
+  
+        
+  submit: "Submit"
+  edit: "Edit"
+  delete: "Delete"

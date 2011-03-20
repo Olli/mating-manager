@@ -1,15 +1,21 @@
 MatingManager::Application.routes.draw do
+
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
-  root :to => "users#new"
+  get "dashboard" => "dashboard#index", :as => "dashboard"
+  root :to => "sites#index"
   resources :users
   resources :sessions
   
   namespace :admin do
     resources :users
+    resources :mating_apiaries
+    get "dashboard" => "dashboard#index", :as => "dashboard"
   end
   
+  match "/admin" => redirect("/admin/dashboard")
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
