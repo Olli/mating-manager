@@ -7,6 +7,7 @@ MatingManager::Application.routes.draw do
   root :to => "sites#index"
   resources :users
   resources :sessions
+  resources :sites
   
   namespace :admin do
     resources :users

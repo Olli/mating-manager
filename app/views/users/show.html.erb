@@ -1,0 +1,7 @@
+<article>
+  <h1><%= t(:account) %> <%= @user.email %></h1>
+  <address>
+    <%= @user.address %>
+  </address>
+  <%= link_to t(:edit_your_account_informations), edit_user_path %>
+</article>
