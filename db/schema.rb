@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(:version => 20110220162509) do
 
   create_table "mating_apiaries", :force => true do |t|
     t.string   "name"
-    t.decimal  "lat",        :precision => 10, :scale => 0
-    t.decimal  "lon",        :precision => 10, :scale => 0
+    t.decimal  "lat",         :precision => 10, :scale => 0
+    t.decimal  "lon",         :precision => 10, :scale => 0
     t.text     "address"
+    t.integer  "free_places"
+    t.integer  "used_places"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
