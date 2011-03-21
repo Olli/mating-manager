@@ -39,7 +39,25 @@ html {
 }
 
 body {
+  width: 980px;
+  margin: 0 auto;
+}
+
+header {
   
+  @include rounded-top;
+  background: $blue url("/images/header.png") top left no-repeat;
+  height: 145px;
+  span {
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 50px;
+    margin: auto;
+    padding-top: 22px;
+    width: 275px;
+  }
 }
 
 /* classes */
@@ -58,20 +76,5 @@ body {
 }
 
 
-#header {
-  
-  @include rounded-top;
-  background: $blue url("/images/header.png") top left no-repeat;
-  height: 145px;
-  span {
-    color: #FFFFFF;
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    height: 50px;
-    margin: auto;
-    padding-top: 22px;
-    width: 275px;
-  }
-}
+
 

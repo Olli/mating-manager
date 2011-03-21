@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <title>MatingManager</title>
+    <meta charset="utf-8" />
     <%# stylesheet_link_tag :all %>
     <%= stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'compiled/print.css', :media => 'print'%>
@@ -13,11 +14,11 @@
   </head>
   <body>
     <div id="container">
-      <div id="header">
+      <header>
         <span>
           <%= t(:headertext) %>
         </span>
-      </div>
+      </header>
       <div id="user_nav">
         <% if current_user %>
           Logged in as <%= current_user.email %>.
@@ -27,7 +28,8 @@
           <%= link_to "log in", log_in_path %>
         <% end %>
       </div>
-
+      <%= render 'shared/nav'%>
+      
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
@@ -35,8 +37,8 @@
       <div id="content">      
         <%= yield %>
       </div>
-      <div id="footer">
-      </div>
+      <footer>
+      </footer>
     </div>
   
   </body>
