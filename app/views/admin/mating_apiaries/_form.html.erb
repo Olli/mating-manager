@@ -1,11 +1,8 @@
-<p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.label :address %><br/>
-  <%= f.text_area :address %>
-</p>
-<p>
-  <%= submit_tag t(:submit)%>
-</p>
+<% f.inputs do %>
+  <%= f.input :name %>
+  <%= f.input :address, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20, :maxlength => 10  }  %>
+  <%= f.input :free_places, :as => :numeric %>
+  <%= f.input :lat, :as => :hidden %>
+  <%= f.input :lon, :as => :hidden %>
+<% end%>
+<%= f.buttons %>

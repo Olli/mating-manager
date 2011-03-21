@@ -13,6 +13,13 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
+      mating_apiary:
+        name: "Name"
+        address: "Address"
+        lat: "Latitude"
+        lon: "Longitude"
+        free_places: "Free Places"
+        used_places: "Used Places"
 
   mating_apiary:
     mating_apinaries: "Mating apiaries"

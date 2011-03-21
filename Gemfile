@@ -20,3 +20,5 @@ gem 'jquery-rails', '>= 0.2.6'
 gem "cancan"
 gem 'omniauth'
 gem "bcrypt-ruby", :require => "bcrypt"
+
+gem 'formtastic', '~> 1.2.3'
