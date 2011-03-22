@@ -39,8 +39,11 @@ en:
   submit: "Submit"
   edit: "Edit"
   delete: "Delete"
+
   successful_updated: "Successful updated"
   successful_deleted: "Successful deleted"
+  successful_created: "Successful created"
+
   nav:
     profile: Profile
     

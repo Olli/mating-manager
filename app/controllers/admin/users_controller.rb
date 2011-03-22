@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   respond_to :html
-  before_filter :set_title 
+
   def index
     @users = User.all
   end
@@ -13,7 +13,7 @@ class Admin::UsersController < Admin::ApplicationController
   def create
     @user = User.create(params[:user])    
     if @user.save
-      flash[:notice] = I18n.t(:successful_created, :scope => :usermanagement)
+      flash[:notice] = I18n.t(:successful_created)
     end
     respond_with @user
     
@@ -25,14 +25,14 @@ class Admin::UsersController < Admin::ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
     if @user.save
-      flash[:notice] = I18n.t(:successful_updated, :scope => :usermanagement)
+      flash[:notice] = I18n.t(:successful_updated)
     end
     respond_with @user
   end
   def delete
     @user = User.find(params[:id])
     if  @user.destroy
-      flash[:notice] = I18n.t(:successful_destroyed, :scope => :usermanagement)
+      flash[:notice] = I18n.t(:successful_deleted)
     end
     respond_with @user
   end
