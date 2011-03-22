@@ -10,6 +10,7 @@ MatingManager::Application.routes.draw do
   resources :sites
   
   namespace :admin do
+    resources :mating_units
     resources :users
     resources :mating_apiaries
     get "dashboard" => "dashboard#index", :as => "dashboard"

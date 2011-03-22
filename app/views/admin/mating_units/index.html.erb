@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        <%= t(:name, :scope => "activerecord.attributes.mating_unit") %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @mating_units.each do |mating_unit| %>
+    <tr id="<%= dom_id(mating_unit) %>">
+      <td>
+        <%= mating_unit.name %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -21,12 +21,15 @@ en:
         free_places: "Free Places"
         used_places: "Used Places"
 
+      mating_unit:
+        name: "Name"
+
   mating_apiary:
     mating_apinaries: "Mating apiaries"
     create_new: "Create a new mating apiary"
   user:
     edit_your_account_informations: "Edit your account Informations"
-  
+
         
   submit: "Submit"
   edit: "Edit"
