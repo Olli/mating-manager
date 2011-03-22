@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
+require 'enumerator'
 module Geography
   
   class << self
     def country_codes
-      @@country_codes ||= COUNTRIES.map{|country, code| code}
+      @@country_codes ||= @@countries.map{|country, code| code}
     end
     
     def country_name_from_code(code)
@@ -17,14 +18,14 @@ module Geography
     private
 
       def country_names_hash
-        @@country_names_hash ||= Geography::COUNTRIES.inject({}) {|hash,country| hash[country.last.downcase] = country.first; hash }
+        @@country_names_hash ||= @@countries.inject({}) {|hash,country| hash[country.last.downcase] = country.first; hash }
       end
 
       def country_codes_hash
-        @@country_codes_hash ||= Geography::COUNTRIES.inject({}) {|hash,country| hash[country.first.downcase] = country.last; hash }
+        @@country_codes_hash ||= @@countries.inject({}) {|hash,country| hash[country.first.downcase] = country.last; hash }
       end
   end
-  
+
   COUNTRIES =  [
     ['Afghanistan', 'AF'],
     ['Åland Islands', 'AX'],
@@ -76,10 +77,10 @@ module Geography
     ['Colombia', 'CO'],
     ['Comoros', 'KM'],
     ['Congo', 'CG'],
-    ['Congo, the Democratic Republic of the', 'CD'],
+    ['Congo, the Democratic Republic of the ', 'CD'],
     ['Cook Islands', 'CK'],
     ['Costa Rica', 'CR'],
-    ['Côte d\'Ivoire', 'CI'],
+    ['Cote D\'ivoire', 'CI'],
     ['Croatia', 'HR'],
     ['Cuba', 'CU'],
     ['Cyprus', 'CY'],
@@ -120,7 +121,7 @@ module Geography
     ['Guinea-Bissau', 'GW'],
     ['Guyana', 'GY'],
     ['Haiti', 'HT'],
-    ['Heard Island and McDonald Islands', 'HM'],
+    ['Heard Island and Mcdonald Islands', 'HM'],
     ['Holy See (Vatican City State)', 'VA'],
     ['Honduras', 'HN'],
     ['Hong Kong', 'HK'],
@@ -128,7 +129,7 @@ module Geography
     ['Iceland', 'IS'],
     ['India', 'IN'],
     ['Indonesia', 'ID'],
-    ['Iran', 'IR'],
+    ['Iran, Islamic Republic of', 'IR'],
     ['Iraq', 'IQ'],
     ['Ireland', 'IE'],
     ['Isle of Man', 'IM'],
@@ -145,17 +146,17 @@ module Geography
     ['Korea, Republic of', 'KR'],
     ['Kuwait', 'KW'],
     ['Kyrgyzstan', 'KG'],
-    ['Laos', 'LA'],
+    ['Lao People\'s Democratic Republic', 'LA'],
     ['Latvia', 'LV'],
     ['Lebanon', 'LB'],
     ['Lesotho', 'LS'],
     ['Liberia', 'LR'],
-    ['Libya', 'LY'],
+    ['Libyan Arab Jamahiriya', 'LY'],
     ['Liechtenstein', 'LI'],
     ['Lithuania', 'LT'],
     ['Luxembourg', 'LU'],
     ['Macao', 'MO'],
-    ['Macedonia', 'MK'],
+    ['Macedonia, the Former Yugoslav Republic of', 'MK'],
     ['Madagascar', 'MG'],
     ['Malawi', 'MW'],
     ['Malaysia', 'MY'],
@@ -169,7 +170,7 @@ module Geography
     ['Mayotte', 'YT'],
     ['Mexico', 'MX'],
     ['Micronesia, Federated States of', 'FM'],
-    ['Moldova', 'MD'],
+    ['Moldova, Republic of', 'MD'],
     ['Monaco', 'MC'],
     ['Mongolia', 'MN'],
     ['Montserrat', 'MS'],
@@ -215,7 +216,7 @@ module Geography
     ['Saint Vincent and the Grenadines', 'VC'],
     ['Samoa', 'WS'],
     ['San Marino', 'SM'],
-    ['São Tomé and Príncipe', 'ST'],
+    ['Sao Tome and Principe', 'ST'],
     ['Saudi Arabia', 'SA'],
     ['Senegal', 'SN'],
     ['Serbia and Montenegro', 'CS'],
@@ -236,10 +237,10 @@ module Geography
     ['Swaziland', 'SZ'],
     ['Sweden', 'SE'],
     ['Switzerland', 'CH'],
-    ['Syria', 'SY'],
-    ['Taiwan', 'TW'],
+    ['Syrian Arab Republic', 'SY'],
+    ['Taiwan, Province of China', 'TW'],
     ['Tajikistan', 'TJ'],
-    ['Tanzania', 'TZ'],
+    ['Tanzania, United Republic of', 'TZ'],
     ['Thailand', 'TH'],
     ['Timor-Leste', 'TL'],
     ['Togo', 'TG'],
@@ -255,7 +256,7 @@ module Geography
     ['Ukraine', 'UA'],
     ['United Arab Emirates', 'AE'],
     ['United Kingdom', 'GB'],
-    ['United States of America', 'US'],
+    ['United States', 'US'],
     ['United States Minor Outlying Islands', 'UM'],
     ['Uruguay', 'UY'],
     ['Uzbekistan', 'UZ'],
@@ -270,5 +271,9 @@ module Geography
     ['Zambia', 'ZM'],
     ['Zimbabwe', 'ZW']
   ]
+
+  DB_COUNTRIES = COUNTRIES.to_enum(:each_with_index).collect{ |c, index| [c[0], index] }
   
+  mattr_accessor :countries
+  self.countries = DB_COUNTRIES
 end

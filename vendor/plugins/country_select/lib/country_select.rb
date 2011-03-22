@@ -12,19 +12,21 @@ module ActionView
       #
       # NOTE: Only the option tags are returned, you have to wrap this call in a regular HTML select tag.
       def country_options_for_select(selected = nil, *priority_country_codes)
+        selected_id = selected.id if selected
+        countries = Country.all
         country_options = ""
 
         unless priority_country_codes.empty?
-          priority_countries = Geography::COUNTRIES.select do |country, code|
-            priority_country_codes.include?(code)
+          priority_countries = countries.select do |country|
+            priority_country_codes.include?(country.code)
           end
           unless priority_countries.empty?
-            country_options += options_for_select(priority_countries, selected)
+            country_options += options_for_select(priority_countries.map{|c| [c.name, c.id]}, selected_id)
             country_options += "<option value=\"\" disabled=\"disabled\">-------------</option>\n"
           end
         end
 
-        return country_options + options_for_select(Geography::COUNTRIES, priority_country_codes.include?(selected) ? nil : selected)
+        return country_options + options_for_select(countries.map{|c| [c.name, c.id]}, priority_country_codes.include?(selected_id) ? nil : selected_id)
       end
     end
     
