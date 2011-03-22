@@ -24,11 +24,15 @@ en:
   mating_apiary:
     mating_apinaries: "Mating apiaries"
     create_new: "Create a new mating apiary"
+  user:
+    edit_your_account_informations: "Edit your account Informations"
   
         
   submit: "Submit"
   edit: "Edit"
   delete: "Delete"
+  successful_updated: "Successful updated"
+  successful_deleted: "Successful deleted"
   nav:
     profile: Profile
     

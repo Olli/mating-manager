@@ -7,7 +7,15 @@ class CreateUsers < ActiveRecord::Migration
       # for omniauth
       t.string :provider
       t.string :uid
-      t.text   :address
+      # address for billing informations
+      t.string :first_name
+      t.string :last_name
+      t.string :street
+      t.string :house_number
+      t.string :zip
+      t.string :city
+      t.integer :country_id
+
       t.timestamps
     end
   end

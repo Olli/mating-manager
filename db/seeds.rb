@@ -7,7 +7,17 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 #users
-admin = User.create(:email => 'admin@test.de', :password => 'test', :password_confirmation => 'test')
+admin = User.create(:email => 'admin@test.de', 
+                    :password => 'test', :password_confirmation => 'test')
+admin.first_name    = 'Peter'
+admin.last_name     = 'Lustig'
+admin.house_number  = "10a"
+admin.street        = "Lustigstrasse",
+admin.zip           = "01234"
+admin.city          = "Meinestadt"
+admin.country       = Country.find_by_code('DE')                    
+admin.save
+
 deliverer = User.create(:email => 'deliverer@test.de', :password => 'test', :password_confirmation => 'test')
 
 # apiaries

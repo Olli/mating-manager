@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(:version => 20110220162509) do
 
+  create_table "countries", :force => true do |t|
+    t.string "code"
+    t.string "name"
+  end
+
+  add_index "countries", ["code"], :name => "index_countries_on_code"
+  add_index "countries", ["name"], :name => "index_countries_on_name"
+
   create_table "deliverers", :force => true do |t|
     t.integer  "user_id"
     t.integer  "mating_apiary_id"
@@ -70,7 +78,13 @@ ActiveRecord::Schema.define(:version => 20110220162509) do
     t.string   "password_salt"
     t.string   "provider"
     t.string   "uid"
-    t.text     "address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "street"
+    t.string   "house_number"
+    t.string   "zip"
+    t.string   "city"
+    t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

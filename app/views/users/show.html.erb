@@ -1,7 +1,9 @@
 <article>
   <h1><%= t(:account) %> <%= @user.email %></h1>
   <address>
-    <%= @user.address %>
+    <%= @user.full_name %><br />
+    <%= @user.street %> <%= @user.house_number %><br />
+    <%= @user.zip %> <%= @user.city %> <%= @user.country.name %>
   </address>
-  <%= link_to t(:edit_your_account_informations), edit_user_path %>
+  <%= link_to t(:edit_your_account_informations, :scope => :user), edit_user_path %>
 </article>

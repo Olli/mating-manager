@@ -1,4 +1,13 @@
 <%= semantic_form_for @user do |f| %>
-  <%= f.inputs :password, :password_confirmation, :address %>
+  <%= f.inputs :password, :password_confirmation %>
+  <%= f.inputs :name => 'Adress' do %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :street %>
+    <%= f.input :house_number %>
+    <%= f.input :zip %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+  <% end%>
   <%= f.buttons %>
 <% end %>
