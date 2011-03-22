@@ -30,7 +30,12 @@ en:
   user:
     edit_your_account_informations: "Edit your account Informations"
 
-        
+  admin_nav:
+    users: "Users"
+    mating_apiaries: "Mating Apiaries"
+    mating_units: "Mating Units"
+
+
   submit: "Submit"
   edit: "Edit"
   delete: "Delete"
