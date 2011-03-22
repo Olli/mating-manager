@@ -1,0 +1,42 @@
+== CountrySelect
+
+Provides a helper to render an HTML select tag containing a list of countries. 
+
+=== Installation
+
+  $ rails plugin install http://github.com/christianhellsten/country_select.git
+
+=== Importing countries in to your database
+
+To import countries in to your database, run the following rake task:
+
+  $ rake countries:import
+
+Available rake tasks:
+
+  $ rake -T|grep countries                                                   
+  rake countries:create              # Create countries table
+  rake countries:drop                # Drop countries table
+  rake countries:import              # Import all countries
+  rake countries:setup               # Create table and import all countries
+
+=== Select helper example
+
+To output a drop-down menu of all countries, with Australia and New Zealand at the top:
+
+  country_select(:user, :country_id, ["AU", "NZ"], :prompt => true, :value => user.country)
+
+or
+
+  form_for(@person) do |f|
+    f.country_select(:country_id, ["AU", "NZ"], :prompt => true, :value => @person.country)
+
+=== Credits
+
+
+ * Original code by Michael Koziarski, Jim Benton.
+ * This fork is based on Arthur Gunn's "country_select plugin":http://github.com/gunn/country_select.
+ * Rake task by "fnando":http://github.com/fnando/country_select/
+ * Rails 3 compatibility update and support for countries stored in a database by Christian Hellsten.
+
+Released under the MIT license
