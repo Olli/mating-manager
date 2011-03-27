@@ -9,7 +9,7 @@
   <h3><%= t(:father_line, :scope => :father_line)%></h3>
     <p>
       <%= @mating_apiary.father_line.race %> ( <%= @mating_apiary.father_line.name %> )
-      <%= l(@mating_apiary.father_line.startdate,:format => :short) %> - <%= l(@mating_apiary.father_line.enddate,:format => :short) %>
+      <%= l(@mating_apiary.father_line.startdate) %> - <%= l(@mating_apiary.father_line.enddate) %>
     <p>
 <% end %>
 

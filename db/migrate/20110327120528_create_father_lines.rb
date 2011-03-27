@@ -5,8 +5,8 @@ class CreateFatherLines < ActiveRecord::Migration
       t.string :race
       t.text :description
       t.integer :mating_apiary_id
-      t.datetime :startdate
-      t.datetime :enddate
+      t.date :startdate
+      t.date :enddate
       t.timestamps
     end
   end

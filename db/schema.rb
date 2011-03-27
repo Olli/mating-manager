@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20110327120528) do
     t.string   "race"
     t.text     "description"
     t.integer  "mating_apiary_id"
-    t.datetime "startdate"
-    t.datetime "enddate"
+    t.date     "startdate"
+    t.date     "enddate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
