@@ -13,7 +13,14 @@ class MatingApiary < ActiveRecord::Base
     save
   end
 
+  def useable_places
+    useable = 0
+    places.each { |p| useable += p.amount }
+    useable
+  end
+
+  # TODO ensure that there are no negative "open_places"
   def open_places
-    free_places - used_places.count
+    useable_places - used_places.count
   end
 end
