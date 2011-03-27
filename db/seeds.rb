@@ -27,6 +27,9 @@ apiary = MatingApiary.create(:name => "Belegstelle1", :lat => 51, :lon => 13, :a
 kieler = MatingUnit.create(:name => 'Kieler Begattungskasten')
 miniplus = MatingUnit.create(:name => 'MiniPlus')
 
+#father lines
+apiary.create_father_line(:name => 'Carnica1', :race=> "Carnica", :startdate => Time.now, :enddate => Time.now + 30.days )
+
 apiary.places.create(:mating_unit => kieler, :amount => 5)
 apiary.places.create(:mating_unit => miniplus, :amount => 10)
 
