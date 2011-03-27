@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110220162509) do
+ActiveRecord::Schema.define(:version => 20110327120528) do
 
   create_table "countries", :force => true do |t|
     t.string "code"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20110220162509) do
     t.datetime "updated_at"
   end
 
+  create_table "father_lines", :force => true do |t|
+    t.string   "name"
+    t.string   "race"
+    t.text     "description"
+    t.integer  "mating_apiary_id"
+    t.datetime "startdate"
+    t.datetime "enddate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "mating_apiaries", :force => true do |t|
     t.string   "name"
     t.decimal  "lat",         :precision => 10, :scale => 0
@@ -37,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110220162509) do
     t.integer  "used_places"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "enabled",                                    :default => false
   end
 
   create_table "mating_units", :force => true do |t|
