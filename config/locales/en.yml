@@ -27,6 +27,11 @@ en:
   mating_apiary:
     mating_apinaries: "Mating apiaries"
     create_new: "Create a new mating apiary"
+    use_this: "Use this mating apiary"
+    location: "Location"
+    open_places: "Open places"
+    create_delivery: "Create a delivery"
+
   user:
     edit_your_account_informations: "Edit your account Informations"
 
@@ -46,6 +51,7 @@ en:
 
   nav:
     profile: Profile
+    mating_apiaries: "Mating Apiaries"
 
   account: Account
   headertext: "Mating Manager"

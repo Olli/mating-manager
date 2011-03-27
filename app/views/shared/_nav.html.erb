@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <li><%= link_to 'My Apiaries', nil%></li>
+    <li><%= link_to t(:mating_apiaries, :scope => :nav), mating_apiaries_path %></li>
     <li><%= link_to t(:profile,:scope => :nav), user_path(current_user.id) %></li>
   </ul>
 </nav>
