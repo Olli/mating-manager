@@ -30,6 +30,7 @@ deliverer.save
 apiary = MatingApiary.create(:name => "Belegstelle1",
                              :lat => 51, :lon => 13,
                              :address => "Adresse\n Strasse")
+apiary.approve!
 
 # mating units
 kieler = MatingUnit.create(:name => 'Kieler Begattungskasten')
