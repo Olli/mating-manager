@@ -1,0 +1,23 @@
+<h2><%= @mating_apiary.name %></h2>
+<p>
+  <address>
+    <%= @mating_apiary.address %>
+  </address>
+</p>
+<h3><%= t(:location, :scope => :mating_apiary) %></h3>
+<p>
+  Latitude: <%= @mating_apiary.lat %>
+</p>
+<p>
+  Longitude: <%= @mating_apiary.lon %>
+</p>
+<h3>Free Places/Delivery</h3>
+<p>
+  <% if @mating_apiary.open_places > 0 %>
+    <%= t(:open_places, :scope => :mating_apiary)%>: 
+    <%= @mating_apiary.open_places  %>
+    <%# link_to t(:create_delivery,:scope => :mating_apiary), new_mating_apiary_deliverer_path %>
+  <% else %>
+    <%= t(:sorry_its_closed,:scope => :mating_apiary) %>
+  <% end %>
+</p>

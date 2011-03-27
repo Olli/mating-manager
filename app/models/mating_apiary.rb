@@ -4,6 +4,15 @@ class MatingApiary < ActiveRecord::Base
   has_many :deliverers
   validates_presence_of :name
   validates_presence_of :address
-  validates_uniqueness_of :name
+  validates_uniqueness_of :name, :on => :create
+  scope :approved, where(:enabled => true)
 
+  def approve!
+    self.enabled = true
+    save
+  end
+
+  def open_places
+    free_places - used_places.count
+  end
 end

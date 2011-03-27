@@ -5,6 +5,7 @@ class CreateMatingApiaries < ActiveRecord::Migration
       t.decimal :lat
       t.decimal :lon
       t.text    :address
+      t.boolean :enabled, :default => false
       t.timestamps
     end
   end

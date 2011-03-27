@@ -1,0 +1,7 @@
+<ul>
+  <% @mating_apiaries.each do |mating_apiary| %>
+    <li id=<%= dom_id(mating_apiary)%>">
+    <%= link_to mating_apiary.name + "»", mating_apiary_path(mating_apiary), :title => t(:use_this, :scope => :mating_apiary)%>
+    </li>
+  <% end %>
+</ul>
