@@ -7,40 +7,48 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 #users
-admin = User.create(:email => 'admin@test.de', 
-                    :password => 'test', :password_confirmation => 'test')
+admin = User.new
+admin.email         = 'admin@test.de'
+admin.password      = 'test'
+admin.password_confirmation = 'test'
 admin.first_name    = 'Peter'
 admin.last_name     = 'Lustig'
 admin.house_number  = "10a"
 admin.street        = "Lustigstrasse",
 admin.zip           = "01234"
 admin.city          = "Meinestadt"
-#admin.country       = Country.find_by_code('DE')
+admin.country       = Country.find_by_code('DE')
 admin.save
 
-deliverer = User.create(:email => 'deliverer@test.de', :password => 'test', :password_confirmation => 'test')
+deliverer = User.new
+deliverer.email = 'deliverer@test.de'
+deliverer.password = 'test'
+deliverer.password_confirmation = 'test'
+deliverer.save
 
 # apiaries
 apiary = MatingApiary.create(:name => "Belegstelle1",
                              :lat => 51, :lon => 13,
-                             :address => "Adresse\n Strasse",
-                             :free_places => 50 )
+                             :address => "Adresse\n Strasse")
+
 # mating units
 kieler = MatingUnit.create(:name => 'Kieler Begattungskasten')
 miniplus = MatingUnit.create(:name => 'MiniPlus')
 
-delivery_kieler = apiary.delivery.create(:user => deliverer,
+# create some deliveries
+delivery_kieler = apiary.deliveries.create(:user => deliverer,
                                   :mating_unit => kieler,
                                   :amount => 10,
                                   :incomedate => Time.now,
                                   :pickupdate => Time.now + 30.days
                                   )
-delivery_miniplus = apiary.delivery.create(:user => deliverer,
+delivery_miniplus = apiary.deliveries.create(:user => deliverer,
                                   :mating_unit => miniplus,
                                   :amount => 20,
                                   :incomedate => Time.now,
                                   :pickupdate => Time.now + 30.days
                     )
+#accept and deny this deliveries                    
 delivery_kieler.accept!
 delivery_miniplus.deny!
 
