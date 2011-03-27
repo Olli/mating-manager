@@ -1,8 +1,0 @@
-one:
-  locale: de
-  key: 'translation.one'
-  value: 'Übersetzung deutsch'
-  interpolations: ''
-  is_proc: false
-  created_at: <%= Time.now %>
-  updated_at: <%= Time.now %>
