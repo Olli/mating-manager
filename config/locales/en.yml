@@ -32,6 +32,9 @@ en:
     open_places: "Open places"
     create_delivery: "Create a delivery"
 
+  father_line:
+    father_line: "Father line"
+
   user:
     edit_your_account_informations: "Edit your account Informations"
 

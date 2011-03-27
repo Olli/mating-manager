@@ -4,6 +4,15 @@
     <%= @mating_apiary.address %>
   </address>
 </p>
+
+<% unless @mating_apiary.father_line.blank? %>
+  <h3><%= t(:father_line, :scope => :father_line)%></h3>
+    <p>
+      <%= @mating_apiary.father_line.race %> ( <%= @mating_apiary.father_line.name %> )
+      <%= l(@mating_apiary.father_line.startdate,:format => :short) %> - <%= l(@mating_apiary.father_line.enddate,:format => :short) %>
+    <p>
+<% end %>
+
 <h3><%= t(:location, :scope => :mating_apiary) %></h3>
 <p>
   Latitude: <%= @mating_apiary.lat %>
