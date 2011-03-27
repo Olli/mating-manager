@@ -9,7 +9,7 @@ MatingManager::Application.routes.draw do
   resources :sessions
   resources :sites
   resources :mating_apiaries do
-    resources :deliverers
+    resources :deliveries
   end
   
   namespace :admin do

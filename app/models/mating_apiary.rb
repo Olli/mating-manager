@@ -1,7 +1,7 @@
 class MatingApiary < ActiveRecord::Base
   has_many :places
   has_many :used_places
-  has_many :deliverers
+  has_many :deliveries
   has_one  :father_line
   validates_presence_of :name
   validates_presence_of :address

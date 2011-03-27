@@ -8,17 +8,17 @@ kl1:
   mating_apiary: apiary1
   mating_unit: kieler
   identifier: kl-1
-  deliverer: deliverer1
+  delivery: delivery1_accepted
 
 kl2:
   mating_apiary: apiary1
   mating_unit: kieler
   identifier: kl-2
-  deliverer: deliverer1
+  delivery: delivery1_accepted
 
 mp1:
   mating_apiary: apiary1
   mating_unit: miniplus
   identifier: mp1
-  deliverer: deliverer1
+  delivery: delivery1_accepted
   

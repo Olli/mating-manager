@@ -3,7 +3,7 @@ class CreateUsedPlaces < ActiveRecord::Migration
     create_table :used_places do |t|
       t.integer :mating_apiary_id
       t.integer :mating_unit_id
-      t.integer :deliverer_id
+      t.integer :delivery_id
       t.string  :identifier
       t.timestamps
     end

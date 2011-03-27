@@ -5,7 +5,7 @@ one:
   password_hash: "$2a$10$CAkgazpP.5qL3SVOVuQfwuGVqd2uCkXKtM7YjvPfCtNJ5/t9cJYl2"
   password_salt: "$2a$10$CAkgazpP.5qL3SVOVuQfwu"
 
-delivereruser:
+deliveryuser:
   email: deliverer@test.com
   password_hash: "test"
   password_salt: "test"

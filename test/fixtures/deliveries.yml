@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+delivery1_requested: 
+  user: delivereruser
+  mating_apiary: apiary1
+  mating_unit: kieler
+  amount: 10
+  incomedate: <%= Time.now %>
+  pickupdate: <%= Time.now + 14.days %>
+  state: "requested"
+
+delivery2_accepted: 
+  user: delivereruser
+  mating_apiary: apiary1
+  mating_unit: kieler
+  amount: 10
+  incomedate: <%= Time.now %>
+  pickupdate: <%= Time.now + 14.days %>
+  state: "accepted"
+
+delivery3_denied: 
+  user: delivereruser
+  mating_apiary: apiary1
+  mating_unit: kieler
+  amount: 10
+  incomedate: <%= Time.now %>
+  pickupdate: <%= Time.now + 14.days %>
+  state: "denied"  

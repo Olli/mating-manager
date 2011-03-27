@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :deliverers
+  has_many :deliveries
   belongs_to :country
   attr_accessible :password, :password_confirmation, :first_name, :last_name, :house_number, :street, :zip, :city, :country_id
 

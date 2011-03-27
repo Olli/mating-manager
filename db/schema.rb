@@ -12,18 +12,14 @@
 
 ActiveRecord::Schema.define(:version => 20110327120528) do
 
-  create_table "countries", :force => true do |t|
-    t.string "code"
-    t.string "name"
-  end
-
-  add_index "countries", ["code"], :name => "index_countries_on_code"
-  add_index "countries", ["name"], :name => "index_countries_on_name"
-
-  create_table "deliverers", :force => true do |t|
+  create_table "deliveries", :force => true do |t|
     t.integer  "user_id"
     t.integer  "mating_apiary_id"
-    t.text     "address"
+    t.integer  "mating_unit_id"
+    t.integer  "amount"
+    t.date     "incomedate"
+    t.date     "pickupdate"
+    t.string   "state",            :default => "requested"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,14 +37,12 @@ ActiveRecord::Schema.define(:version => 20110327120528) do
 
   create_table "mating_apiaries", :force => true do |t|
     t.string   "name"
-    t.decimal  "lat",         :precision => 10, :scale => 0
-    t.decimal  "lon",         :precision => 10, :scale => 0
+    t.decimal  "lat",        :precision => 10, :scale => 0
+    t.decimal  "lon",        :precision => 10, :scale => 0
     t.text     "address"
-    t.integer  "free_places"
-    t.integer  "used_places"
+    t.boolean  "enabled",                                   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "enabled",                                    :default => false
   end
 
   create_table "mating_units", :force => true do |t|
@@ -65,20 +59,10 @@ ActiveRecord::Schema.define(:version => 20110327120528) do
     t.datetime "updated_at"
   end
 
-  create_table "translations", :force => true do |t|
-    t.string   "locale"
-    t.string   "key"
-    t.text     "value"
-    t.text     "interpolations"
-    t.boolean  "is_proc",        :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "used_places", :force => true do |t|
     t.integer  "mating_apiary_id"
     t.integer  "mating_unit_id"
-    t.integer  "deliverer_id"
+    t.integer  "delivery_id"
     t.string   "identifier"
     t.datetime "created_at"
     t.datetime "updated_at"

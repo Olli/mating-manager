@@ -22,3 +22,6 @@ gem 'omniauth'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'formtastic', '~> 1.2.3'
+
+# state machine
+gem 'aasm'
