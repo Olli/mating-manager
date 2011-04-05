@@ -5,4 +5,5 @@ class UsedPlaceTest < ActiveSupport::TestCase
   should belong_to(:delivery)
   should belong_to(:mating_unit)
   should validate_presence_of(:identifier)
+  should validate_association_of(:mating_unit)
 end
