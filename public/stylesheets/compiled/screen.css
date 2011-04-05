@@ -63,19 +63,19 @@ a img {
 }
 
 /* global definitions */
-/* line 43, ../../../app/stylesheets/screen.scss */
+/* line 60, ../../../app/stylesheets/screen.scss */
 html {
   font-size: 16px;
   font-family: "Trebuchet MS", Arial, Verdana;
 }
 
-/* line 48, ../../../app/stylesheets/screen.scss */
+/* line 65, ../../../app/stylesheets/screen.scss */
 body {
   width: 980px;
   margin: 0 auto;
 }
 
-/* line 53, ../../../app/stylesheets/screen.scss */
+/* line 70, ../../../app/stylesheets/screen.scss */
 header {
   border-topleft-radius: 5px;
   border-topright-radius: 5px;
@@ -86,7 +86,7 @@ header {
   background: #3197ce url("/images/header.png") top left no-repeat;
   height: 145px;
 }
-/* line 58, ../../../app/stylesheets/screen.scss */
+/* line 75, ../../../app/stylesheets/screen.scss */
 header span {
   color: #FFFFFF;
   display: block;
@@ -98,7 +98,7 @@ header span {
   width: 275px;
 }
 
-/* line 70, ../../../app/stylesheets/screen.scss */
+/* line 87, ../../../app/stylesheets/screen.scss */
 nav {
   background: #f6e6b4;
   /* old browsers */
@@ -109,11 +109,11 @@ nav {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6e6b4', endColorstr='#E5AF72',GradientType=0 );
   /* ie */
 }
-/* line 72, ../../../app/stylesheets/screen.scss */
+/* line 89, ../../../app/stylesheets/screen.scss */
 nav ul {
   letter-spacing: -6px;
 }
-/* line 75, ../../../app/stylesheets/screen.scss */
+/* line 92, ../../../app/stylesheets/screen.scss */
 nav ul li {
   letter-spacing: -0.02em;
   border-radius: 2px;
@@ -127,7 +127,7 @@ nav ul li {
   text-align: center;
   line-height: 50px;
 }
-/* line 90, ../../../app/stylesheets/screen.scss */
+/* line 107, ../../../app/stylesheets/screen.scss */
 nav ul li a {
   text-decoration: none;
   color: #fff;
@@ -136,7 +136,7 @@ nav ul li a {
   text-shadow: 1px 1px 1px #A7A7A7;
 }
 
-/* line 104, ../../../app/stylesheets/screen.scss */
+/* line 121, ../../../app/stylesheets/screen.scss */
 article h1 {
   font-weight: bold;
   font-size: 1.3em;
@@ -144,7 +144,7 @@ article h1 {
 
 /* classes */
 /* ids */
-/* line 117, ../../../app/stylesheets/screen.scss */
+/* line 134, ../../../app/stylesheets/screen.scss */
 #container {
   box-shadow: 0px 0px 5px #d5d5d5;
   -moz-box-shadow: 0px 0px 5px #d5d5d5;
@@ -159,8 +159,36 @@ article h1 {
   margin: 10px auto;
 }
 
-/* line 124, ../../../app/stylesheets/screen.scss */
+/* line 141, ../../../app/stylesheets/screen.scss */
 #user_nav,
 #content {
   padding: 10px;
+}
+
+/* line 146, ../../../app/stylesheets/screen.scss */
+#content form {
+  width: 600px;
+}
+/* line 153, ../../../app/stylesheets/screen.scss */
+#content input[type=text],
+#content input[type=email],
+#content input[type=password],
+#content textarea,
+#content select {
+  border: 1px solid #d9d9d9;
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
+  padding: 2px;
+  text-shadow: 1px 1px 1px #C5C3C3;
+  border-topleft-radius: 5px;
+  border-topright-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-topleft-radius: 5px;
+  -webkit-border-topright-radius: 5px;
+  border-bottomleft-radius: 5px;
+  border-bottomright-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottomleft-radius: 5px;
+  -webkit-border-bottomright-radius: 5px;
 }

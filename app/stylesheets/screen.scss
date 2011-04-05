@@ -18,6 +18,23 @@
   -webkit-border-topright-radius: $radius;
 }
 
+@mixin rounded-bottom {
+
+  $radius: 5px;
+
+  border-bottomleft-radius: $radius;
+  border-bottomright-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -webkit-border-bottomleft-radius: $radius;
+  -webkit-border-bottomright-radius: $radius;
+}
+
+@mixin rounded {
+  @include rounded-top;
+  @include rounded-bottom;
+}
+
 @mixin shadow {
   $x: 0px;
   $y: 0px;
@@ -125,5 +142,21 @@ article {
   padding: 10px;
 }
 
+#content {
+  form {
+    width: 600px;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  textarea,
+  select {
+    border: 1px solid #d9d9d9;
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+    padding: 2px;
+    text-shadow: 1px 1px 1px #C5C3C3;
+    @include rounded;
+  }
+}
 
 
