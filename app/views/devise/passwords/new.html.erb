@@ -1,0 +1,10 @@
+<h2><%= t('devise.passwords.forgot_password')%></h2>
+
+<%= semantic_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.input :email, :as => :email %></p>
+  <%= f.commit_button t('devise.passwords.send_me_reset_instructions') %>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

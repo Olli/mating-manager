@@ -1,19 +1,8 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
   def show
     @user = User.find(current_user)
     redirect_to edit_user_path(@user) if @user.last_name.blank? 
 
-  end
-  def create
-    @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = I18n.t(:signed_up,:scope => :usermanagement) + "!"
-    else
-      render "new"
-    end
   end
   def edit
     @user = User.find(current_user)

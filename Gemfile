@@ -17,6 +17,7 @@ gem "compass", ">= 0.10.6"
 
 
 gem 'jquery-rails', '>= 0.2.6'
+gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem "cancan"
 gem 'omniauth'
 gem "bcrypt-ruby", :require => "bcrypt"

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110327120528) do
+ActiveRecord::Schema.define(:version => 20110404120159) do
+
+  create_table "countries", :force => true do |t|
+    t.string "code"
+    t.string "name"
+  end
+
+  add_index "countries", ["code"], :name => "index_countries_on_code"
+  add_index "countries", ["name"], :name => "index_countries_on_name"
 
   create_table "deliveries", :force => true do |t|
     t.integer  "user_id"
@@ -69,9 +77,18 @@ ActiveRecord::Schema.define(:version => 20110327120528) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
+    t.string   "email",                               :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "reset_password_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.string   "provider"
     t.string   "uid"
     t.string   "first_name"

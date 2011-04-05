@@ -1,9 +1,13 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :email
-      t.string :password_hash
-      t.string :password_salt
+      #devise
+      t.database_authenticatable
+      t.confirmable
+      t.recoverable
+      t.rememberable
+      t.trackable
+
       # for omniauth
       t.string :provider
       t.string :uid

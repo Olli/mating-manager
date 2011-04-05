@@ -1,0 +1,9 @@
+<h2><%= t(:resend_confirmation_instructions,:scope => "devise") %></h2>
+
+<%= semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.input :email, :as => :email %>
+  <%= f.commit_button t(:resend_confirmation_instructions,:scope => "devise") %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

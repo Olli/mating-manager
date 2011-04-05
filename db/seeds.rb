@@ -6,11 +6,18 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+# countries - taken from the plugin
+puts "Importing countries"
+Geography::COUNTRIES.each do |name, code|
+  Country.create(:name => name, :code => code)
+end
+puts "\n", "*"*5, "Imported #{Country.count} countries", "\n"
+
 #users
 admin = User.new
 admin.email         = 'admin@test.de'
-admin.password      = 'test'
-admin.password_confirmation = 'test'
+admin.password      = 'testtest'
+admin.password_confirmation = 'testtest'
 admin.first_name    = 'Peter'
 admin.last_name     = 'Lustig'
 admin.house_number  = "10a"
@@ -19,12 +26,15 @@ admin.zip           = "01234"
 admin.city          = "Meinestadt"
 admin.country       = Country.find_by_code('DE')
 admin.save
+admin.confirm!
 
 deliverer = User.new
 deliverer.email = 'deliverer@test.de'
-deliverer.password = 'test'
-deliverer.password_confirmation = 'test'
+deliverer.password = 'testtest'
+deliverer.password_confirmation = 'testtest'
 deliverer.save
+deliverer.confirm!
+
 
 # apiaries
 apiary = MatingApiary.create(:name => "Belegstelle1",
@@ -32,11 +42,13 @@ apiary = MatingApiary.create(:name => "Belegstelle1",
                              :address => "Adresse\n Strasse")
 apiary.approve!
 
+
 # mating units
 kieler = MatingUnit.create(:name => 'Kieler Begattungskasten')
 miniplus = MatingUnit.create(:name => 'MiniPlus')
 
 # create some deliveries
+apiary = MatingApiary.first
 delivery_kieler = apiary.deliveries.create(:user => deliverer,
                                   :mating_unit => kieler,
                                   :amount => 10,

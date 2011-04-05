@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 56fd7031e55e4df0a90219fd7e4faa8556e84fe3
+  specs:
+    devise (1.3.0.dev)
+      bcrypt-ruby (~> 2.1.2)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -104,6 +113,7 @@ GEM
       oa-enterprise (= 0.1.6)
       oa-oauth (= 0.1.6)
       oa-openid (= 0.1.6)
+    orm_adapter (0.0.4)
     polyglot (0.3.1)
     pyu-ruby-sasl (0.0.3.2)
     rack (1.2.2)
@@ -149,6 +159,8 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.25)
+    warden (1.0.3)
+      rack (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -160,6 +172,7 @@ DEPENDENCIES
   bcrypt-ruby
   cancan
   compass (>= 0.10.6)
+  devise!
   formtastic (~> 1.2.3)
   jquery-rails (>= 0.2.6)
   mysql2

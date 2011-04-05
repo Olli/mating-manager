@@ -1,0 +1,9 @@
+<h2><%= t("device.unlocks.resend_unlock_instructions") %></h2>
+
+<%= semantic_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.input :email, :as => :email %>
+  <%= f.commit_button  t("device.unlocks.resend_unlock_instructions") %>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
