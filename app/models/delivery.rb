@@ -21,6 +21,18 @@ class Delivery < ActiveRecord::Base
   scope :only_accepted, where(:state => :accepted)
   scope :only_denied, where(:state => :denied)
   scope :archived, where(:state => :archived)
+  scope :order_by, lambda { |order|
+    case order
+      when 'pickupdate'
+        order("pickupdate")
+      when 'state'
+        order("state")
+      when 'incomedate'
+        order("incomedate")
+      when 'mating_unit'
+        order('mating_unit_id')
+      end
+  }
   
   has_many   :used_places, :conditions => { :state => 'accepted'}
   belongs_to :user

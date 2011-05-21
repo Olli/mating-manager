@@ -126,7 +126,11 @@ article {
 
 /* classes */
 
-
+.right_navigation {
+  @include rounded;
+  @include shadow;
+  width: 250px;
+}
 
 
 /* ids */

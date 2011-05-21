@@ -1,0 +1,15 @@
+<%= render :partial => 'mating_apiaries/menu', :locals => { :mating_apiary => @mating_apiary }%>
+<table class="deliveries">
+  <thead>
+    <tr>
+      <th><%= Delivery.human_attribute_name(:pickupdate) %></th>
+      <th><%= User.human_attribute_name(:full_name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= Delivery.human_attribute_name(:mating_unit) %></th>
+      <th><%= Delivery.human_attribute_name(:amount)%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @deliveries %>
+  </tbody>
+</table>

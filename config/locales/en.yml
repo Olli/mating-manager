@@ -24,6 +24,11 @@ en:
       mating_unit:
         name: "Name"
 
+      delivery:
+        pickupdate: "Pickeup date"
+        mating_unit: "Mating_unit"
+        amount: "Amount"
+
   mating_apiary:
     mating_apinaries: "Mating apiaries"
     create_new: "Create a new mating apiary"
@@ -31,6 +36,9 @@ en:
     location: "Location"
     open_places: "Open places"
     create_delivery: "Create a delivery"
+    deliveries: "Deliveries"
+    sorry_its_closed: "Apiary is closed for deliveries"
+
 
   father_line:
     father_line: "Father line"
@@ -59,4 +67,5 @@ en:
   account: Account
   headertext: "Mating Manager"
   here: here
+  back: Back
     
