@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-MatingManager::Application.config.secret_token = '4ad193de1872ba1e4f9f047e82d35dc9a30368e623d17ac4833f2dc615c89d344ecad8e5f9fb3ccab5adf6435414f0d24f3ba575a5a62dce439bb8e191141834'
+MatingManager::Application.config.secret_token = 'f2b06899ca86afb7833858fe1c87da340b566a9d9beb4405e860e98b5b75b471404a3c8fd73b64751063548372a7da50110451c70a1f4338c6f5543a2dc80a99'
