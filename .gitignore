@@ -6,3 +6,5 @@ config/initializers/secret_token.rb
 db/schema.rb
 .sass-cache/
 rails/
+/nbproject/private/
+/.bundle/

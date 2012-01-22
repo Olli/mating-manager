@@ -28,7 +28,7 @@ end
 
 gem 'capistrano'
 gem 'jquery-rails'
-gem "devise", :git => "git://github.com/plataformatec/devise.git"
+gem "devise"
 gem "cancan"
 gem 'omniauth'
 gem "bcrypt-ruby", :require => "bcrypt"
