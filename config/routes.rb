@@ -1,4 +1,6 @@
 MatingManager::Application.routes.draw do
+  default_url_options :host => MATINGAPPCONFIG.mailer_default_url
+
   devise_for :users
   get "dashboard" => "dashboard#index", :as => "dashboard"
   root :to => "sites#index"
@@ -7,14 +9,14 @@ MatingManager::Application.routes.draw do
   resources :mating_apiaries do
     resources :deliveries
   end
-  
+
   namespace :admin do
     resources :mating_units
     resources :users
     resources :mating_apiaries
     get "dashboard" => "dashboard#index", :as => "dashboard"
   end
-  
+
   match "/admin" => redirect("/admin/dashboard")
 
   # The priority is based upon order of creation:
