@@ -1,70 +1,57 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+---
 en:
-  i18n:
-    plural:
-      keys: [:zero, :one, :other]
-
+  account: Account
   activerecord:
     attributes:
-      user:
-        email: "Email"
-        password: "Password"
-        password_confirmation: "Password confirmation"
-      mating_apiary:
-        name: "Name"
-        address: "Address"
-        lat: "Latitude"
-        lon: "Longitude"
-        free_places: "Free Places"
-        used_places: "Used Places"
-
-      mating_unit:
-        name: "Name"
-
       delivery:
+        amount: Amount
+        mating_unit: Mating_unit
         pickupdate: "Pickeup date"
-        mating_unit: "Mating_unit"
-        amount: "Amount"
-
-  mating_apiary:
-    mating_apinaries: "Mating apiaries"
-    create_new: "Create a new mating apiary"
-    use_this: "Use this mating apiary"
-    location: "Location"
-    open_places: "Open places"
-    create_delivery: "Create a delivery"
-    deliveries: "Deliveries"
-    sorry_its_closed: "Apiary is closed for deliveries"
-
-
-  father_line:
-    father_line: "Father line"
-
-  user:
-    edit_your_account_informations: "Edit your account Informations"
-
+      mating_apiary:
+        address: Address
+        free_places: "Free Places"
+        lat: Latitude
+        lon: Longitude
+        name: Name
+        used_places: "Used Places"
+      mating_unit:
+        name: Name
+      user:
+        email: Email
+        password: Password
+        password_confirmation: "Password confirmation"
   admin_nav:
-    users: "Users"
     mating_apiaries: "Mating Apiaries"
     mating_units: "Mating Units"
-
-
-  submit: "Submit"
-  edit: "Edit"
-  delete: "Delete"
-
-  successful_updated: "Successful updated"
-  successful_deleted: "Successful deleted"
-  successful_created: "Successful created"
-
-  nav:
-    profile: Profile
-    mating_apiaries: "Mating Apiaries"
-
-  account: Account
+    users: Users
+  back: Back
+  delete: Delete
+  edit: Edit
+  father_line:
+    father_line: "Father line"
   headertext: "Mating Manager"
   here: here
-  back: Back
-    
+  i18n:
+    plural:
+      keys:
+        - !ruby/symbol zero
+        - !ruby/symbol one
+        - !ruby/symbol other
+  mating_apiary:
+    create_delivery: "Create a delivery"
+    create_new: "Create a new mating apiary"
+    deliveries: Deliveries
+    location: Location
+    mating_apinaries: "Mating apiaries"
+    open_places: "Open places"
+    sorry_its_closed: "Apiary is closed for deliveries"
+    use_this: "Use this mating apiary"
+  nav:
+    mating_apiaries: "Mating Apiaries"
+    profile: Profile
+  submit: Submit
+  successful_created: "Successful created"
+  successful_deleted: "Successful deleted"
+  successful_updated: "Successful updated"
+  user:
+    edit_your_account_informations: "Edit your account Informations"
