@@ -1,8 +1,24 @@
 <%= f.inputs do %>
   <%= f.input :name %>
-  <%= f.input :address, :input_html => { :class => 'autogrow', :rows => 10, :cols => 20, :maxlength => 10  }  %>
-  <%= f.input :free_places, :as => :numeric %>
-  <%= f.input :lat, :as => :hidden %>
-  <%= f.input :lon, :as => :hidden %>
+  <%= f.input :address,
+              :input_html => {
+                :class => 'autogrow',
+                :rows => 10,
+                :cols => 20,
+                :maxlength => 10
+              }  %>
+  <%= f.input :free_places,
+              :as => :numeric
+  %>
+  <%= f.input :lat,
+              :as => :hidden
+  %>
+
+  <%= f.input :lon,
+              :as => :hidden
+  %>
+
 <% end%>
-<%= f.buttons %>
+<%= f.action :submit,
+             :as => :button
+%>

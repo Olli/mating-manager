@@ -2,13 +2,24 @@
 
 <%= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <%= f.inputs do %>
-    <%= f.input :email, :as => :email %>
-    <%= f.input :password, :as => :password %>
+    <%= f.input :email,
+                :as => :email
+    %>
+    <%= f.input :password,
+                :as => :password
+    %>
     <% if devise_mapping.rememberable? -%>
-      <%= f.input :remember_me, :as => :boolean %>
+      <%= f.input :remember_me,
+                  :as => :boolean
+      %>
     <% end %>
   <% end %>
-  <%= f.commit_button t('devise.sessions.log_in')%>
+  <%= f.action :submit,
+               :as => :button,
+               :button_html => {
+                 :class => 'btn'
+               }
+  %>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
