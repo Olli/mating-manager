@@ -1,4 +1,5 @@
 class Admin::MatingUnitsController < Admin::AdminBaseController
+  before_filter :find_mating_unit, only: [:edit,:update]
   def index
     @mating_units = MatingUnit.all
   end
@@ -9,14 +10,16 @@ class Admin::MatingUnitsController < Admin::AdminBaseController
     @mating_unit = MatingUnit.create(params[:mating_unit])
   end
   def edit
-    @mating_unit = MatingUnit.find(params[:id])
   end
   def update
-    @mating_unit = MatingUnit.find(params[:id])
     @mating_unit.update_attributes(params[:mating_unit])
     if @mating_unit.save
       flash[:notice] = t(:successful_updated)
     end
   end
+  protected
+    def find_mating_unit
+      @mating_unit = MatingUnit.find(params[:id])
+    end
 
 end

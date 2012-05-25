@@ -1,4 +1,5 @@
 class Admin::MatingApiariesController < Admin::AdminBaseController
+  before_filter :find_mating_apiary, only: [:edit, :update, :delete]
   def index
     @mating_apiaries = MatingApiary.all
   end
@@ -15,10 +16,8 @@ class Admin::MatingApiariesController < Admin::AdminBaseController
     end
   end
   def edit
-    @mating_apiary = MatingApiary.find(params[:id])
   end
   def update
-    @mating_apiary = MatingApiary.find(params[:id])
     @mating_apiary.update_attributes(params[:mating_apiary])
     if @mating_apiary.errors.blank?
       flash[:notice] = I18n.t(:created, :scope => :mating_apiary)
@@ -28,7 +27,10 @@ class Admin::MatingApiariesController < Admin::AdminBaseController
     end
   end
   def delete
-    @mating_apiary = MatingApiary.find(params[:id])
     @mating_apiary.destroy
   end
+  protected
+    def find_mating_apiary
+      @mating_apiary = MatingApiary.find(params[:id])
+    end
 end
