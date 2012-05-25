@@ -24,10 +24,12 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'jquery-rails'
+  # https://github.com/joliss/jquery-ui-rails
+  gem 'jquery-ui-rails'
 end
 
 
-gem 'jquery-rails'
 gem "devise"
 gem "cancan"
 gem 'omniauth'
@@ -38,4 +40,5 @@ gem 'country-select'
 # state machine
 gem 'aasm'
 
-gem 'bourbon'
+# https://github.com/thomas-mcdonald/bootstrap-sass
+gem 'bootstrap-sass'
