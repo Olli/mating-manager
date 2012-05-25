@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->        
+    <![endif]-->
     <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
     <%= javascript_include_tag :application %>
     <%= csrf_meta_tag %>
@@ -18,26 +18,19 @@
         </span>
       </header>
       <div id="user_nav">
-        <% if current_user %>
-          Logged in as <%= current_user.email %>.
-          <%= link_to "Log out", destroy_user_session_path %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> or
-          <%= link_to "log in", new_user_session_path %>
-        <% end %>
-      </div>
+      <%= render :partial => 'shared/logged_in_sign_up' %>
       <%= render :partial => 'shared/nav' if current_user %>
-      
+
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
 
-      <div id="content">      
+      <div id="content">
         <%= yield %>
       </div>
       <footer>
       </footer>
     </div>
-  
+
   </body>
 </html>
