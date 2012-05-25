@@ -37,3 +37,5 @@ gem 'formtastic'
 gem 'country-select'
 # state machine
 gem 'aasm'
+
+gem 'bourbon'
