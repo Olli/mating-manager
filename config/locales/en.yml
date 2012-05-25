@@ -39,7 +39,7 @@ en:
         - !ruby/symbol other
   mating_apiary:
     create_delivery: "Create a delivery"
-    create_new: "Create a new mating apiary"
+    create_new: "New mating apiary"
     deliveries: Deliveries
     location: Location
     mating_apinaries: "Mating apiaries"

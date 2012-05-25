@@ -1,5 +1,9 @@
 <h1><%= t(:mating_apinaries, :scope => :mating_apiary)%></h1>
-<table>
+<%= link_to t('mating_apiary.create_new'),
+            new_admin_mating_apiary_path,
+            title: t('mating_apiary.create_new'),
+            class: 'btn'%>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>
@@ -10,11 +14,6 @@
       </th>
       <th>
         &nbsp;
-      </th>      
-    </tr>
-    <tr>
-      <th>
-        <%= link_to icon_tag("book--plus"), new_admin_mating_apiary_path, :title => t(:create_new, :scope=> :mating_apiary) %>
       </th>
     </tr>
   </thead>
@@ -25,20 +24,26 @@
         <%= link_to mating_apiary.name, edit_admin_mating_apiary_path(mating_apiary) %>
       </td>
       <td>
-        <%= link_to icon_tag("book--pencil"), edit_admin_mating_apiary_path(mating_apiary), :title => t(:edit) %>
-      </td>        
+        <%= link_to t('edit'), edit_admin_mating_apiary_path(mating_apiary),
+                    title: t('edit'),
+                    class: 'btn btn-primary'
+        %>
+
+      </td>
       <td>
-        <%= link_to icon_tag("book--minus"), admin_mating_apiary_path(mating_apiary), :title => t(:delete), :method => :delete %>
-      </td>        
-      
+        <%= link_to t('delete'), admin_mating_apiary_path(mating_apiary),
+                    title: t('delete'),
+                    method: :delete,
+                    class: 'btn'
+        %>
+
+      </td>
+
     </tr>
   <% end %>
   </tbody>
-  <tfoot>
-    <tr>
-      <td>
-        <%= link_to icon_tag("book--plus"), new_admin_mating_apiary_path, :title => t(:create_new, :scope=> :mating_apiary) %>
-      </td>
-    </tr>
-  </tfoot>
 </table>
+<%= link_to t('mating_apiary.create_new'),
+    new_admin_mating_apiary_path,
+    title: t('mating_apiary.create_new'),
+    class: 'btn'%>
