@@ -1,4 +1,4 @@
-class Admin::MatingUnitsController < Admin::ApplicationController
+class Admin::MatingUnitsController < Admin::AdminBaseController
   def index
     @mating_units = MatingUnit.all
   end
@@ -8,7 +8,7 @@ class Admin::MatingUnitsController < Admin::ApplicationController
   def create
     @mating_unit = MatingUnit.create(params[:mating_unit])
   end
-  def edit 
+  def edit
     @mating_unit = MatingUnit.find(params[:id])
   end
   def update
@@ -18,5 +18,5 @@ class Admin::MatingUnitsController < Admin::ApplicationController
       flash[:notice] = t(:successful_updated)
     end
   end
-      
+
 end

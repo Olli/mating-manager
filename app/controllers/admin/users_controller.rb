@@ -1,4 +1,4 @@
-class Admin::UsersController < Admin::ApplicationController
+class Admin::UsersController < Admin::AdminBaseController
   respond_to :html
 
   def index
@@ -11,12 +11,12 @@ class Admin::UsersController < Admin::ApplicationController
     @user = User.new
   end
   def create
-    @user = User.create(params[:user])    
+    @user = User.create(params[:user])
     if @user.save
       flash[:notice] = I18n.t(:successful_created)
     end
     respond_with @user
-    
+
   end
   def edit
     @user = User.find(params[:id])
@@ -36,5 +36,5 @@ class Admin::UsersController < Admin::ApplicationController
     end
     respond_with @user
   end
-  
+
 end

@@ -1,4 +1,4 @@
-class Admin::MatingApiariesController < Admin::ApplicationController
+class Admin::MatingApiariesController < Admin::AdminBaseController
   def index
     @mating_apiaries = MatingApiary.all
   end
