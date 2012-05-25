@@ -27,6 +27,9 @@ group :assets do
   gem 'jquery-rails'
   # https://github.com/joliss/jquery-ui-rails
   gem 'jquery-ui-rails'
+  # https://github.com/thomas-mcdonald/bootstrap-sass
+  gem 'bootstrap-sass'
+
 end
 
 
@@ -40,5 +43,3 @@ gem 'country-select'
 # state machine
 gem 'aasm'
 
-# https://github.com/thomas-mcdonald/bootstrap-sass
-gem 'bootstrap-sass'
