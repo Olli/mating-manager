@@ -26,6 +26,9 @@ en:
     users: Users
   back: Back
   delete: Delete
+  confirmation:
+    really:
+      bad_idea: "This is a really bad idea"
   edit: Edit
   father_line:
     father_line: "Father line"
@@ -49,6 +52,7 @@ en:
   nav:
     mating_apiaries: "Mating Apiaries"
     profile: Profile
+    back_to_overview: Overview
   submit: Submit
   successful_created: "Successful created"
   successful_deleted: "Successful deleted"

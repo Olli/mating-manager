@@ -1,0 +1,22 @@
+    <tr id="<%= dom_id(mating_unit) %>">
+      <td>
+        <%= mating_unit.name %>
+      </td>
+      <td>
+        <%= image_tag(mating_unit.picture.url(:thumb))  %>
+      </td>
+      <td>
+        <%= link_to t('edit'),
+                    edit_admin_mating_unit_path(mating_unit),
+                    class: 'btn' %>
+      </td>
+      <td>
+        <%= link_to t('delete'),
+                    admin_mating_unit_path(mating_unit),
+                    method: :delete,
+                    remote: true,
+                    confirm: t('confirmation.really.bad_idea'),
+                    class: 'btn'
+        %>
+      </td>
+    </tr>
