@@ -1,5 +1,5 @@
 class Admin::MatingUnitsController < Admin::AdminBaseController
-  before_filter :find_mating_unit, only: [:edit,:update,:delete]
+  before_filter :find_mating_unit, only: [:edit,:update,:destroy]
   def index
     @mating_units = MatingUnit.all
   end
@@ -25,7 +25,7 @@ class Admin::MatingUnitsController < Admin::AdminBaseController
       render 'edit'
     end
   end
-  def delete
+  def destroy
     @mating_unit.destroy
   end
   protected
