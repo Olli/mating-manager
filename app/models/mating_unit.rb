@@ -7,4 +7,5 @@ class MatingUnit < ActiveRecord::Base
                                 thumb: "100x100>"
                               }
   validates_uniqueness_of :name, :on => :create
+  validates_attachment :picture, :size => { :in => 0..1000.kilobytes }
 end
