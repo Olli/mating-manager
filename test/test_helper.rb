@@ -4,6 +4,7 @@ require 'rails/test_help'
 require "paperclip/matchers"
 
 class ActiveSupport::TestCase
+
   extend Paperclip::Shoulda::Matchers
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
