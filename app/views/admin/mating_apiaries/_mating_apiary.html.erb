@@ -1,0 +1,22 @@
+    <tr id="<%= dom_id(mating_apiary) %>">
+      <td>
+        <%= link_to mating_apiary.name, edit_admin_mating_apiary_path(mating_apiary) %>
+      </td>
+      <td>
+        <%= link_to t('edit'), edit_admin_mating_apiary_path(mating_apiary),
+                    title: t('edit'),
+                    class: 'btn btn-primary'
+        %>
+
+      </td>
+      <td>
+        <%= link_to t('delete'), admin_mating_apiary_path(mating_apiary),
+                    title: t('delete'),
+                    method: :delete,
+                    class: 'btn',
+                    remote: true
+        %>
+
+      </td>
+
+    </tr>
