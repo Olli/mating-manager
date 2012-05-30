@@ -3,8 +3,8 @@ class MatingApiary < ActiveRecord::Base
   has_many :used_places
   has_many :deliveries
   has_one  :father_line
-  validates_presence_of :name
-  validates_presence_of :address
+  validate :name, presence: true
+  validate :address, presence: true
   validates_uniqueness_of :name, :on => :create
   scope :approved, where(:enabled => true)
 
