@@ -152,7 +152,10 @@ article {
   input[type=password],
   textarea,
   select {
-    
+
+  }
+  button {
+    @extend .btn
   }
 }
 
