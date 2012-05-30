@@ -8,3 +8,4 @@ db/schema.rb
 rails/
 /nbproject/private/
 /.bundle/
+public/system
