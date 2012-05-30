@@ -1,0 +1,9 @@
+<%= semantic_form_for [:admin, @mating_unit] do |form| %>
+  <%= form.semantic_errors %>
+  <%= form.inputs do  %>
+    <%= form.input :name  %>
+  <% end %>
+  <%= form.actions do %>
+    <%= form.action :submit, :as => :button  %>
+  <% end %>
+<% end %>
