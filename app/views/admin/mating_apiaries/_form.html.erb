@@ -7,16 +7,10 @@
                 :cols => 20,
                 :maxlength => 10
               }  %>
-  <%= f.input :free_places,
-              :as => :numeric
-  %>
-  <%= f.input :lat,
-              :as => :hidden
-  %>
+  <%= f.input :free_places %>
+  <%= f.input :lat %>
 
-  <%= f.input :lon,
-              :as => :hidden
-  %>
+  <%= f.input :lon %>
 
 <% end%>
 <%= f.action :submit,
