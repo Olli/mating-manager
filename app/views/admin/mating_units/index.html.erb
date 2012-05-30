@@ -9,15 +9,12 @@
       <th>
         <%= t(:name, :scope => "activerecord.attributes.mating_unit") %>
       </th>
-    </tr>
+      <th>&nbsp</th>
+      <th>&nbsp</th>
+      <th>&nbsp</th>
+     </tr>
   </thead>
   <tbody>
-  <% @mating_units.each do |mating_unit| %>
-    <tr id="<%= dom_id(mating_unit) %>">
-      <td>
-        <%= mating_unit.name %>
-      </td>
-    </tr>
-  <% end %>
+    <%= render @mating_units  %>
   </tbody>
 </table>
