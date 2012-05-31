@@ -7,12 +7,23 @@
                 :cols => 20,
                 :maxlength => 10
               }  %>
-  <%= f.input :free_places %>
   <%= f.input :lat %>
-
   <%= f.input :lon %>
 
-<% end%>
-<%= f.action :submit,
-             :as => :button
-%>
+<% end %>
+<h2><%= t('mating_units.mating_units') %>
+<ol id="mating_units">
+  <%= f.fields_for :places, class: 'form-inline' do |place| %>
+    <%= render :partial => 'place_fields', :locals => { :place => place } %>
+  <% end %>
+</ol>
+
+<%= link_to_add_places t('mating_units.add_unit'), f, :places %>
+
+
+
+<%= f.actions do   %>
+  <%= f.action :submit,
+               :as => :button
+  %>
+<% end %>

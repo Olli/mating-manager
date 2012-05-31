@@ -1,0 +1,10 @@
+<li>
+  <%= link_to_close %>
+  <%= place.text_field :amount %>
+  <%= place.select :mating_unit_id,
+                   MatingUnit.all.collect { |mu| [mu.name, mu.id]},
+                   selected: place.object.id,
+                   include_blank: true
+  %>
+
+</li>
