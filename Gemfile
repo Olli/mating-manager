@@ -37,6 +37,7 @@ gem "devise"
 gem "cancan"
 gem 'omniauth'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem "rolify"
 
 gem 'formtastic'
 gem 'country-select'

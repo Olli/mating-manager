@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	rolify
   devise :database_authenticatable,
          :confirmable,
          :recoverable,
