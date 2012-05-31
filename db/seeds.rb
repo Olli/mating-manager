@@ -27,6 +27,7 @@ admin.city          = "Meinestadt"
 admin.country       = Country.find_by_code('DE')
 admin.save
 admin.confirm!
+admin.add_role :admin
 
 deliverer = User.new
 deliverer.email = 'deliverer@test.de'
@@ -34,6 +35,8 @@ deliverer.password = 'testtest'
 deliverer.password_confirmation = 'testtest'
 deliverer.save
 deliverer.confirm!
+deliverer.add_role :deliverer
+
 
 
 # apiaries
@@ -61,7 +64,7 @@ delivery_miniplus = apiary.deliveries.create(:user => deliverer,
                                   :incomedate => Time.now,
                                   :pickupdate => Time.now + 30.days
                     )
-#accept and deny this deliveries                    
+#accept and deny this deliveries
 delivery_kieler.accept!
 delivery_miniplus.deny!
 
