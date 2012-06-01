@@ -26,6 +26,7 @@ en:
     users: Users
   back: Back
   delete: Delete
+  remove: Remove
   confirmation:
     really:
       bad_idea: "This is a really bad idea"
