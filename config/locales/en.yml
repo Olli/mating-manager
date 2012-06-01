@@ -52,6 +52,7 @@ en:
     use_this: "Use this mating apiary"
   mating_units:
     mating_units: "Mating Units"
+    add_unit: "Add Unit"
   nav:
     mating_apiaries: "Mating Apiaries"
     profile: Profile
