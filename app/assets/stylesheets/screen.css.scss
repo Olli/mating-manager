@@ -146,6 +146,7 @@ article {
 #content {
   form {
     width: 600px;
+    @extend .well
   }
   input[type=text],
   input[type=email],
@@ -156,6 +157,9 @@ article {
   }
   button {
     @extend .btn
+  }
+  button[type=submit] {
+    @extend .btn-primary
   }
 }
 
