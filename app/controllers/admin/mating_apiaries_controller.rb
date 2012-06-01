@@ -9,7 +9,7 @@ class Admin::MatingApiariesController < Admin::AdminBaseController
   def create
     @mating_apiary = MatingApiary.create(params[:mating_apiary])
     if @mating_apiary.errors.blank?
-      flash[:notice] = I18n.t(:created, :scope => :mating_apiary)
+      flash[:notice] = I18n.t(:created, :scope => :mating_apiaries)
       redirect_to :action => "index"
     else
       render 'new'
@@ -20,7 +20,7 @@ class Admin::MatingApiariesController < Admin::AdminBaseController
   def update
     @mating_apiary.update_attributes(params[:mating_apiary])
     if @mating_apiary.errors.blank?
-      flash[:notice] = I18n.t(:created, :scope => :mating_apiary)
+      flash[:notice] = I18n.t(:updated, :scope => :mating_apiaries)
       redirect_to :action => "index"
     else
       render 'edit'
