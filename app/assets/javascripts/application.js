@@ -6,7 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.core
 //= require_tree .
 // Loads all Bootstrap javascripts
-//= require bootstrap
+// require bootstrap
