@@ -8,7 +8,7 @@ class MatingApiary < ActiveRecord::Base
   validates :address, presence: true
   validates_uniqueness_of :name, :on => :create
 
-  accepts_nested_attributes_for :places
+  accepts_nested_attributes_for :places, allow_destroy: true
 
   scope :approved, where(:enabled => true)
 

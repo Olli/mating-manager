@@ -1,10 +1,13 @@
-<li>
-  <%= link_to_close %>
-  <%= place.text_field :amount %>
-  <%= place.select :mating_unit_id,
-                   MatingUnit.all.collect { |mu| [mu.name, mu.id]},
-                   selected: place.object.id,
-                   include_blank: true
-  %>
+<div class="nested-fields">
+   <%= f.inputs do %>
+    <%= f.input :amount %>
+    <%= f.input :mating_unit_id,
+                    as: :select,
+                    collection: MatingUnit.all.collect { |mu| [mu.name, mu.id] } %>
+    <%= link_to_remove_association t('places.remove_place'),
+                                   f,
+                                   class: 'btn btn-danger'
+     %>
 
-</li>
+  <% end %>
+</div>

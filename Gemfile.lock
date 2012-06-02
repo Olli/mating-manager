@@ -37,6 +37,7 @@ GEM
     builder (3.0.0)
     cancan (1.6.7)
     cocaine (0.2.1)
+    cocoon (1.0.14)
     coderay (1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -180,6 +181,7 @@ DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass
   cancan
+  cocoon
   coffee-rails
   country-select
   devise

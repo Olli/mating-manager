@@ -40,6 +40,9 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem "rolify"
 
 gem 'formtastic'
+# https://github.com/nathanvda/cocoon
+gem 'cocoon'
+
 gem 'country-select'
 # state machine
 gem 'aasm'

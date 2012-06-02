@@ -1,3 +1,4 @@
+<%= f.semantic_errors %>
 <%= f.inputs do %>
   <%= f.input :name %>
   <%= f.input :address,
@@ -10,18 +11,21 @@
   <%= f.input :lat %>
   <%= f.input :lon %>
 
-<% end %>
-<%= f.inputs do  %>
-  <h2><%= t('mating_units.mating_units') %>
-  <ol id="mating_units">
-    <%= f.fields_for :places, class: 'form-inline' do |place| %>
-      <%= render :partial => 'place_fields', :locals => { :place => place } %>
+
+  <h2><%= t('mating_units.mating_units') %></h2>
+  <div id="places">
+    <%= f.semantic_fields_for :places, class: 'form-inline' do |place| %>
+      <%= render :partial => 'place_fields', :locals => { :f =>  place }%>
     <% end %>
-  </ol>
-
-  <%= link_to_add_places t('mating_units.add_unit'), f, :places %>
+    <div class="links">
+      <%= link_to_add_association t('places.add_place'),
+                                  f,
+                                  :places,
+                                  class: 'btn btn-primary',
+                                  :'association-insertion-method' => 'after'   %>
+    </div>
+  </div>
 <% end %>
-
 
 <%= f.actions do   %>
   <%= f.action :submit,

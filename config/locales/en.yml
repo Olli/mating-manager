@@ -53,6 +53,8 @@ en:
   mating_units:
     mating_units: "Mating Units"
     add_unit: "Add Unit"
+  places:
+    add_place: "Add Place"
   nav:
     mating_apiaries: "Mating Apiaries"
     profile: Profile

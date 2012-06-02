@@ -161,6 +161,9 @@ article {
   button[type=submit] {
     @extend .btn-primary
   }
+  .nested-fields {
+    margin-bottom: 10px;
+  }
 }
 
 
