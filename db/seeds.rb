@@ -29,6 +29,21 @@ admin.save
 admin.confirm!
 admin.add_role :admin
 
+manager = User.new
+manager.email         = 'manager@test.de'
+manager.password      = 'testtest'
+manager.password_confirmation = 'testtest'
+manager.first_name    = 'Frank'
+manager.last_name     = 'Zander'
+manager.house_number  = "10a"
+manager.street        = "Bienenstrasse",
+manager.zip           = "01234"
+manager.city          = "Meinestadt"
+manager.country       = Country.find_by_code('DE')
+manager.save
+manager.confirm!
+manager.add_role :manager
+
 deliverer = User.new
 deliverer.email = 'deliverer@test.de'
 deliverer.password = 'testtest'
