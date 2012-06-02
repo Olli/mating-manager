@@ -1,0 +1,17 @@
+<h1>
+  <%= t('mating_apiary.mating_apiary') %>
+  - <%= @mating_apiary.name %>
+</h1>
+
+<address>
+  <%= @mating_apiary.address %>
+</address>
+<h2>
+  <%= t('delivery.deliveries') %>
+</h2>
+<% unless @mating_apiary.deliveries.blank? %>
+  <%= render partial: "admin/deliveries/deliveries",
+             locals: { deliveries: @mating_apiary.deliveries } %>
+<% else %>
+  <%= t('deliveryno_deliveries_yet') %>
+<% end %>

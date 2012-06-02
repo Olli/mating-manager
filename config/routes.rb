@@ -14,6 +14,11 @@ MatingManager::Application.routes.draw do
     resources :mating_units
     resources :users
     resources :mating_apiaries
+    resources :deliveries do
+      member do
+        get :change_state
+      end
+    end
     get "dashboard" => "dashboard#index", :as => "dashboard"
   end
 

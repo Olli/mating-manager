@@ -7,6 +7,8 @@ en:
         amount: Amount
         mating_unit: Mating_unit
         pickupdate: "Pickeup date"
+        incomedate: "Income date"
+        state: "Status"
       mating_apiary:
         address: Address
         free_places: "Free Places"
@@ -42,6 +44,7 @@ en:
         - !ruby/symbol one
         - !ruby/symbol other
   mating_apiary:
+    mating_apiary: "Mating Apiary"
     create_delivery: "Create a delivery"
     create_new: "New mating apiary"
     deliveries: Deliveries
@@ -59,6 +62,21 @@ en:
     mating_apiaries: "Mating Apiaries"
     profile: Profile
     back_to_overview: Overview
+
+  delivery:
+    deliveries: "Deliveries"
+    no_deliveries_yet: "No deliveries yet"
+    state:
+      accepted: "Accepted"
+      denied: "Denied"
+      archived: "Archived"
+      requested: "Requested"
+    event:
+      accept: "Accept"
+      deny: "Deny"
+      archive: "Archive"
+
+
   submit: Submit
   successful_created: "Successful created"
   successful_deleted: "Successful deleted"

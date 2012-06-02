@@ -1,7 +1,9 @@
 class Admin::MatingApiariesController < Admin::AdminBaseController
-  before_filter :find_mating_apiary, only: [:edit, :update, :destroy]
+  before_filter :find_mating_apiary, only: [:show,:edit, :update, :destroy]
   def index
     @mating_apiaries = MatingApiary.all
+  end
+  def show
   end
   def new
     @mating_apiary = MatingApiary.new

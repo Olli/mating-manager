@@ -10,4 +10,5 @@
 //= require_tree .
 // Loads all Bootstrap javascripts
 // require bootstrap
+//= require bootstrap-dropdown
 //= require cocoon
