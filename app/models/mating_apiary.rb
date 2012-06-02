@@ -6,7 +6,7 @@ class MatingApiary < ActiveRecord::Base
   has_one  :father_line
   validates :name, presence: true
   validates :address, presence: true
-  validates_uniqueness_of :name, :on => :create
+  validates :name, uniqueness: { on: :create }
 
   accepts_nested_attributes_for :places, allow_destroy: true
 

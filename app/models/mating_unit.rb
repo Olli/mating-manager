@@ -6,6 +6,6 @@ class MatingUnit < ActiveRecord::Base
                                 medium: "300x300>",
                                 thumb: "100x100>"
                               }
-  validates_uniqueness_of :name, :on => :create
+  validates :name, uniqueness: { on: :create }
   validates_attachment :picture, :size => { :in => 0..1.megabytes }
 end
