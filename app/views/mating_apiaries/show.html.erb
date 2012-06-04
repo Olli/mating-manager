@@ -9,14 +9,14 @@
 </p>
 
 <% unless @mating_apiary.father_line.blank? %>
-  <h3><%= t(:father_line, :scope => :father_line)%></h3>
+  <h3><%= t('father_line.father_line')%></h3>
     <p>
       <%= @mating_apiary.father_line.race %> ( <%= @mating_apiary.father_line.name %> )
       <%= l(@mating_apiary.father_line.startdate) %> - <%= l(@mating_apiary.father_line.enddate) %>
     <p>
 <% end %>
 
-<h3><%= t(:location, :scope => :mating_apiary) %></h3>
+<h3><%= t('mating_apiary.location') %></h3>
 <p>
   Latitude: <%= @mating_apiary.lat %>
 </p>
@@ -27,10 +27,10 @@
 <h3>Free Places/Delivery</h3>
 <p>
   <% if @mating_apiary.open_places > 0 %>
-    <%= t(:open_places, :scope => :mating_apiary)%>:
+    <%= t('mating_apiary.open_places')%>:
     <%= @mating_apiary.open_places  %>
-    <%= link_to t(:create_delivery,:scope => :mating_apiary), new_mating_apiary_delivery_path(@mating_apiary) %>
+    <%= link_to t('mating_apiary.create_delivery'), new_mating_apiary_delivery_path(@mating_apiary) %>
   <% else %>
-    <%= t(:sorry_its_closed,:scope => :mating_apiary) %>
+    <%= t('mating_apiary.sorry_its_closed') %>
   <% end %>
 </p>
