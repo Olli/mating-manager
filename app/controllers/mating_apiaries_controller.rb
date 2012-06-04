@@ -7,6 +7,7 @@
 class MatingApiariesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_mating_apiary, only: [:show, :edit, :update, :destroy]
+  before_filter :is_allowed?, only: [:edit, :update, :destroy]
   def index
     if current_user.has_role? :admin
       @mating_apiaries = MatingApiary.all
@@ -27,6 +28,7 @@ class MatingApiariesController < ApplicationController
 
   def create
     @mating_apiary = MatingApiary.create(params[:mating_apiary])
+    @mating_apiary.user = current_user
     if @mating_apiary.errors.blank?
       flash[:notice] = I18n.t(:created, :scope => :mating_apiary)
       redirect_to :action => "index"
@@ -46,15 +48,18 @@ class MatingApiariesController < ApplicationController
   end
 
   def destroy
+
     @mating_apiary.destroy
   end
 
   private
     def find_mating_apiary
-      if current_user.has_role? :manager
-        @mating_apiary = current_user.mating_apiary
-      else
-        @mating_apiary = MatingApiary.approved.find(params[:id])
+      @mating_apiary = MatingApiary.approved.find(params[:id])
+    end
+
+    def is_allowed?
+      if not current_user.is_manager_of? @mating_apiary
+        redirect_to mating_apiary_path(@mating_apiary)
       end
     end
 
