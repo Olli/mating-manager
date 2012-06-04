@@ -1,5 +1,5 @@
 <%= render :partial => 'menu', :locals => { :mating_apiary => @mating_apiary } %>
- 
+
 
 <h2><%= @mating_apiary.name %></h2>
 <p>
@@ -23,10 +23,11 @@
 <p>
   Longitude: <%= @mating_apiary.lon %>
 </p>
+<p><%= link_to t('edit'), edit_mating_apiary_path(@mating_apiary), class: 'btn btn-primary' %></p>
 <h3>Free Places/Delivery</h3>
 <p>
   <% if @mating_apiary.open_places > 0 %>
-    <%= t(:open_places, :scope => :mating_apiary)%>: 
+    <%= t(:open_places, :scope => :mating_apiary)%>:
     <%= @mating_apiary.open_places  %>
     <%= link_to t(:create_delivery,:scope => :mating_apiary), new_mating_apiary_delivery_path(@mating_apiary) %>
   <% else %>

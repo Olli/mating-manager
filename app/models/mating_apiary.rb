@@ -4,6 +4,7 @@ class MatingApiary < ActiveRecord::Base
   has_many :used_places
   has_many :deliveries
   has_one  :father_line
+  belongs_to  :user
   validates :name, presence: true
   validates :address, presence: true
   validates :name, uniqueness: { on: :create }
@@ -26,5 +27,9 @@ class MatingApiary < ActiveRecord::Base
   # TODO ensure that there are no negative "open_places"
   def open_places
     useable_places - used_places.count
+  end
+
+  def add_manager(user)
+    self.user = user
   end
 end

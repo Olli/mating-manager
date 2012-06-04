@@ -1,6 +1,3 @@
-<%= semantic_form_for [:admin, @mating_unit],
-                      html: { multipart: true } do |form| %>
-                      
   <%= form.semantic_errors %>
   <%= form.inputs do  %>
     <%= form.input :name  %>
@@ -12,4 +9,3 @@
   <%= form.actions do %>
     <%= form.action :submit, :as => :button  %>
   <% end %>
-<% end %>

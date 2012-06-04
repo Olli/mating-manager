@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
          :registerable
 
   has_many :deliveries
+  has_one  :mating_apiary
   belongs_to :country
 
   attr_accessible :email,

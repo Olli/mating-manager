@@ -10,19 +10,13 @@ MatingManager::Application.routes.draw do
     resources :deliveries
   end
 
-  namespace :admin do
-    resources :mating_units
-    resources :users
-    resources :mating_apiaries
-    resources :deliveries do
-      member do
-        get :change_state
-      end
+  resources :mating_units
+  resources :deliveries do
+    member do
+      get :change_state
     end
-    get "dashboard" => "dashboard#index", :as => "dashboard"
   end
 
-  match "/admin" => redirect("/admin/dashboard")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

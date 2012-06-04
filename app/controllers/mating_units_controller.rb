@@ -1,4 +1,4 @@
-class Admin::MatingUnitsController < Admin::AdminBaseController
+class MatingUnitsController < ApplicationController
   before_filter :find_mating_unit, only: [:edit,:update,:destroy]
   def index
     @mating_units = MatingUnit.all

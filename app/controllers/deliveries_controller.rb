@@ -13,4 +13,9 @@ class DeliveriesController < ApplicationController
     @delivery = @mating_apiary.deliverer.build(:user => current_user)
     @available_units = @mating_apiary.available_units
   end
+
+  def change_state
+    @delivery = Delivery.find(params[:id])
+    @delivery.change_state(params[:event])
+  end
 end

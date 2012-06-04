@@ -27,6 +27,10 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
+    elsif user.has_role? :manager
+      can :manage, MatingApiary, enabled: true, user_id: user.id
+    else
+      can :read, MatingApiary, enabled: true
     end
   end
 end
