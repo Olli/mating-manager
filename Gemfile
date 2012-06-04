@@ -26,7 +26,7 @@ group :assets do
   gem 'uglifier'
   gem 'jquery-rails'
   # https://github.com/joliss/jquery-ui-rails
-  gem 'jquery-ui-rails'
+  gem 'jquery-ui-rails', '~> 0.2.2'
   # https://github.com/thomas-mcdonald/bootstrap-sass
   gem 'bootstrap-sass'
 
@@ -47,3 +47,6 @@ gem 'country-select'
 # state machine
 gem 'aasm'
 gem 'paperclip'
+
+# easy and lazy administration
+gem 'rails_admin'

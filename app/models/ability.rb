@@ -27,6 +27,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
+      can :access, :rails_admin
     elsif user.has_role? :manager
       can :manage, MatingApiary, enabled: true, user_id: user.id
     else

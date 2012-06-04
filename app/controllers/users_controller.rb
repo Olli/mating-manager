@@ -1,3 +1,5 @@
+##
+# a user can manage his own account
 class UsersController < ApplicationController
   respond_to :html
   before_filter :find_user, only: [:show,

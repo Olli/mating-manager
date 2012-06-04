@@ -17,6 +17,7 @@ MatingManager::Application.routes.draw do
     end
   end
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' # Feel free to change '/admin' to any namespace you need.
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
