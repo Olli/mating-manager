@@ -29,8 +29,10 @@ class Ability
       can :manage, :all
       can :access, :rails_admin
     elsif user.has_role? :manager
-      can :manage, MatingApiary, enabled: true, user_id: user.id
+      # manager should update his apiary
+      can :manage, MatingApiary, user_id: user.id
     else
+      # deliverer can read apiary if its enabled
       can :read, MatingApiary, enabled: true
     end
   end
