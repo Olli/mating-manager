@@ -11,4 +11,8 @@ module MatingApiariesHelper
                      class: 'btn'
   end
 
+  def set_class_if_owner(mating_apiary)
+    current_user.is_manager_of?(mating_apiary) ? 'class="is_owner"' : ''
+  end
+
 end
