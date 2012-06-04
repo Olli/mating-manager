@@ -1,6 +1,7 @@
 class MatingApiary < ActiveRecord::Base
+  resourcify
   has_many :places
-  has_many :mating_units, through: :place
+  has_many :mating_units, through: :places
   has_many :used_places
   has_many :deliveries
   has_one  :father_line

@@ -15,7 +15,7 @@
   <h2><%= t('mating_units.mating_units') %></h2>
   <div id="places">
     <%= f.semantic_fields_for :places, class: 'form-inline' do |place| %>
-      <%= render :partial => '/shared/place_fields', :locals => { :f =>  place }%>
+      <%= render :partial => 'place_fields', :locals => { :f =>  place }%>
     <% end %>
     <div class="links">
       <%= link_to_add_association t('places.add_place'),
