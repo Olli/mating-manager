@@ -58,7 +58,7 @@ class MatingApiariesController < ApplicationController
     end
 
     def is_allowed?
-      if not current_user.is_manager_of? @mating_apiary
+      unless current_user.is_manager_of? @mating_apiary or current_user.is_admin?
         redirect_to mating_apiary_path(@mating_apiary)
       end
     end
