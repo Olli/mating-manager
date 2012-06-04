@@ -129,7 +129,9 @@ article {
   width: 250px;
 }
 
-
+.is_owner {
+  background-color: $infoBackground;
+}
 /* ids */
 
 #container {

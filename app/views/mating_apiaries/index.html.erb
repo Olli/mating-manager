@@ -1,4 +1,4 @@
-<ul id="mating_apiaries">
+<ul id="mating_apiaries" class="nav nav-list">
   <% @mating_apiaries.each do |mating_apiary| %>
     <li id="<%= dom_id(mating_apiary)%>" <%= set_class_if_owner(mating_apiary) %> >
       <%= link_to mating_apiary.name + "»", mating_apiary_path(mating_apiary), :title => t('mating_apiary.use_this')%>
