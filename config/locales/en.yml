@@ -53,9 +53,7 @@ en:
     open_places: "Open places"
     sorry_its_closed: "Apiary is closed for deliveries"
     use_this: "Use this mating apiary"
-  mating_units:
-    mating_units: "Mating Units"
-    add_unit: "Add Unit"
+
   places:
     add_place: "Add Place"
   nav:
