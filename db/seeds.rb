@@ -42,7 +42,7 @@ manager.city          = "Meinestadt"
 manager.country       = Country.find_by_code('DE')
 manager.save
 manager.confirm!
-manager.add_role :manager
+
 
 deliverer = User.new
 deliverer.email = 'deliverer@test.de'
@@ -60,7 +60,7 @@ apiary = MatingApiary.create(:name => "Belegstelle1",
                              :address => "Adresse\n Strasse")
 apiary.approve!
 
-
+manager.add_role :manager, apiary
 # mating units
 kieler = MatingUnit.create(:name => 'Kieler Begattungskasten')
 miniplus = MatingUnit.create(:name => 'MiniPlus')
