@@ -43,6 +43,20 @@ manager.country       = Country.find_by_code('DE')
 manager.save
 manager.confirm!
 
+manager2 = User.new
+manager2.email         = 'manager2@test.de'
+manager2.password      = 'testtest'
+manager2.password_confirmation = 'testtest'
+manager2.first_name    = 'Frank2'
+manager2.last_name     = 'Zander2'
+manager2.house_number  = "10a2"
+manager2.street        = "Bienenstrasse2",
+manager2.zip           = "012342"
+manager2.city          = "Meinestadt2"
+manager2.country       = Country.find_by_code('DE')
+manager2.save
+manager2.confirm!
+
 
 deliverer = User.new
 deliverer.email = 'deliverer@test.de'
@@ -59,8 +73,19 @@ apiary = MatingApiary.create(:name => "Belegstelle1",
                              :lat => 51, :lon => 13,
                              :address => "Adresse\n Strasse")
 apiary.approve!
-
+apiary.user = manager
+apiary.save
 manager.add_role :manager, apiary
+
+apiary2 = MatingApiary.create(:name => "Belegstelle2",
+                             :lat => 51, :lon => 13,
+                             :address => "Adresse\n Strasse")
+apiary2.approve!
+apiary2.user = manager2
+apiary2.save
+manager2.add_role :manager, apiary2
+
+
 # mating units
 kieler = MatingUnit.create(:name => 'Kieler Begattungskasten')
 miniplus = MatingUnit.create(:name => 'MiniPlus')
