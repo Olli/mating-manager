@@ -1,6 +1,0 @@
-<h1><%= t('mating_unit.create.title') %></h1>
-<%= link_to t('nav.back_to_overview'), admin_mating_units_path %>
-<%= semantic_form_for [:admin, @mating_unit],
-                      html: { multipart: true } do |form| %>
-  <%= render partial: 'form' %>
-<% end %>
