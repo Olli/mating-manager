@@ -1,0 +1,5 @@
+<h1><%= t('edit') + ' ' + t('mating_unit.edit.title') %></h1>
+<%= semantic_form_for @mating_unit,
+                      html: { multipart: true } do |form| %>
+  <%= render partial: 'form' %>
+<% end %>

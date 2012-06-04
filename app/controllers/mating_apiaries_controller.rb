@@ -1,8 +1,14 @@
+##
+# manage mating apiary
+# a ordinary user (role deliverer) should only can list view approved apiaries
+# a apiary manager (role manager) should can edit his own apiary and and see
+# other approved
+
 class MatingApiariesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_mating_apiary, only: [:show, :edit, :update, :destroy]
   def index
-    if user.has_role? :admin
+    if current_user.has_role? :admin
       @mating_apiaries = MatingApiary.all
     else
       @mating_apiaries = MatingApiary.approved
@@ -16,6 +22,10 @@ class MatingApiariesController < ApplicationController
   end
 
   def edit
+
+  end
+
+  def create
     @mating_apiary = MatingApiary.create(params[:mating_apiary])
     if @mating_apiary.errors.blank?
       flash[:notice] = I18n.t(:created, :scope => :mating_apiary)
@@ -41,7 +51,11 @@ class MatingApiariesController < ApplicationController
 
   private
     def find_mating_apiary
-      @mating_apiary = MatingApiary.approved
+      if current_user.has_role? :manager
+        @mating_apiary = current_user.mating_apiary
+      else
+        @mating_apiary = MatingApiary.approved.find(params[:id])
+      end
     end
 
 end
