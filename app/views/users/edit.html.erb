@@ -1,7 +1,11 @@
 <%= semantic_form_for current_user, :url => user_path(current_user) do |f| %>
   <%= f.semantic_errors %>
-  <%= f.inputs :current_password, :password, :password_confirmation %>
-  <%= f.inputs :name => 'Adress' do %>
+  <%= f.inputs :name => t('user.password') do %>
+    <%= f.input :current_password %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
+  <%= f.inputs :name => t('user.address') do %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :street %>
@@ -11,7 +15,7 @@
     <%= f.input :country %>
   <% end%>
   <%= f.actions do %>
-    <%= f.action :submit  %>
+    <%= f.action :submit, :as => :button  %>
   <% end %>
 <% end %>
 

@@ -73,11 +73,11 @@ en:
       accept: "Accept"
       deny: "Deny"
       archive: "Archive"
-
-
   submit: Submit
   successful_created: "Successful created"
   successful_deleted: "Successful deleted"
   successful_updated: "Successful updated"
   user:
     edit_your_account_informations: "Edit your account Informations"
+    password: "Password"
+    address: "Address"
