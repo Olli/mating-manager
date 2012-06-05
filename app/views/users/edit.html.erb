@@ -9,7 +9,9 @@
     <%= f.input :city %>
     <%= f.input :country %>
   <% end%>
-  <%= f.buttons %>
+  <%= f.actions do %>
+    <%= f.action :submit  %>
+  <% end %>
 <% end %>
 
 <h3><%= t("devise.registrations.cancle_account")%></h3>
