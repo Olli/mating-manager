@@ -1,4 +1,5 @@
 <%= semantic_form_for current_user, :url => user_path(current_user) do |f| %>
+  <%= f.semantic_errors %>
   <%= f.inputs :current_password, :password, :password_confirmation %>
   <%= f.inputs :name => 'Adress' do %>
     <%= f.input :first_name %>

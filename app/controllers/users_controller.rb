@@ -13,7 +13,12 @@ class UsersController < ApplicationController
   def edit
   end
   def update
-    @user.update_attributes(params[:user])
+    if params[:user][:password].blank?
+      params[:user].delete :current_password
+      @user.update_without_password(params[:user])
+    else
+      @user.update_with_password(params[:user])
+    end
     if @user.save
       flash[:notice] = t(:successful_updated)
       redirect_to user_path(current_user)
