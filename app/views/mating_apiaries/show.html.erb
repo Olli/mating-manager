@@ -23,7 +23,9 @@
 <p>
   Longitude: <%= @mating_apiary.lon %>
 </p>
-<p><%= link_to(t('edit'), edit_mating_apiary_path(@mating_apiary), class: 'btn btn-primary') if current_user.is_manager_of? @mating_apiary or current_user.is_admin?%></p>
+<% if can?(:manage, @mating_apiary) %>
+  <p><%= link_to(t('edit'), edit_mating_apiary_path(@mating_apiary), class: 'btn btn-primary') %></p>
+<% end %>
 <h3>Free Places/Delivery</h3>
 <p>
   <% if @mating_apiary.open_places > 0 %>

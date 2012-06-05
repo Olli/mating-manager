@@ -7,7 +7,7 @@
 class MatingApiariesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_mating_apiary, only: [:show, :edit, :update, :destroy]
-  before_filter :is_allowed?, only: [:edit, :update, :destroy]
+  load_and_authorize_resource  only: [:edit, :update, :destroy]
   def index
     if current_user.has_role? :admin
       @mating_apiaries = MatingApiary.all
@@ -56,11 +56,4 @@ class MatingApiariesController < ApplicationController
     def find_mating_apiary
       @mating_apiary = MatingApiary.approved.find(params[:id])
     end
-
-    def is_allowed?
-      unless current_user.is_manager_of? @mating_apiary or current_user.is_admin?
-        redirect_to mating_apiary_path(@mating_apiary)
-      end
-    end
-
 end
