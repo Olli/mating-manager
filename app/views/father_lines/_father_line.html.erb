@@ -1,0 +1,16 @@
+<tr id="<%= dom_id(father_line) %>" >
+  <td><%= father_line.name %></td>
+  <td><%= father_line.race %></td>
+  <td><%= father_line.description %></td>
+  <td><%= l father_line.startdate %></td>
+  <td><%= l father_line.enddate %></td>
+  <td>
+    <%= show_status(father_line) %>
+    <% if can? :update, father_line %>
+      <%= link_to t('father_line.manage'),
+        edit_father_line_path(father_line),
+        remote: true
+      %>
+    <% end %>
+  </td>
+</tr>

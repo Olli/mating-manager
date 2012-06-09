@@ -16,6 +16,7 @@ MatingManager::Application.routes.draw do
       get :change_state
     end
   end
+  resources :father_lines
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' # Feel free to change '/admin' to any namespace you need.
 

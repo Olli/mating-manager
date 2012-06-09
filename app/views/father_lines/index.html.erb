@@ -1,0 +1,15 @@
+<table id="father_lines" class="table">
+  <thead>
+    <tr>
+      <% [:name, :race, :description, :startdate, :enddate, :state ].each do |attrib| %>
+        <th><%= FatherLine.human_attribute_name attrib %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @father_lines %>
+  </tbody>
+</table>
+<% if can? :create, FatherLine %>
+  <%= link_to t('father_line.new'), new_father_line_path, remote: true %>
+<% end %>

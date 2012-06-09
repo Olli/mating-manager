@@ -109,7 +109,8 @@ delivery_kieler.accept!
 delivery_miniplus.deny!
 
 #father lines
-apiary.create_father_line(:name => 'Carnica1', :race=> "Carnica", :startdate => Time.now, :enddate => Time.now + 30.days )
+apiary.create_father_line(:name => 'Carnica1', :race=> "Carnica", :startdate => Time.now, :enddate => Time.now + 30.days, user: manager1 )
+apiary.create_father_line(:name => 'Buckfast1', :race=> "Buckfast", :startdate => Time.now, :enddate => Time.now + 30.days, user: manager1 )
 
 apiary.places.create(:mating_unit => kieler, :amount => 5)
 apiary.places.create(:mating_unit => miniplus, :amount => 10)

@@ -11,4 +11,9 @@
 // Loads all Bootstrap javascripts
 // require bootstrap
 //= require bootstrap-dropdown
+//= require bootstrap-modal
 //= require cocoon
+
+$(document).on('hidden','.form.modal',function(){
+    $('.form.modal').remove();
+});

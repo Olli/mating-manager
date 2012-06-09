@@ -1,0 +1,6 @@
+<% if @father_line.errors.any? %>
+  $("form.modal").replaceWith("<%= j(render partial: 'form') %>");
+<% else %>
+  $("form.modal").modal('hide');
+  $("#father_lines").replaceWith("<%= j(render 'index.html') %>");
+<% end %>

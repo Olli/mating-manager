@@ -1,0 +1,9 @@
+<p>
+  <%= @mating_apiary.father_line.race %>
+  ( <%= @mating_apiary.father_line.name %> )
+  <%= l(@mating_apiary.father_line.startdate) %> - <%= l(@mating_apiary.father_line.enddate) %>
+  <%= link_to t('mating_apiary.remove_father_line'),
+              mating_apiary_path(@mating_apiary),
+              remote: true
+  %>
+</p>

@@ -8,12 +8,14 @@
   </address>
 </p>
 
+<h3><%= t('father_line.father_line')%></h3>
 <% unless @mating_apiary.father_line.blank? %>
-  <h3><%= t('father_line.father_line')%></h3>
-    <p>
-      <%= @mating_apiary.father_line.race %> ( <%= @mating_apiary.father_line.name %> )
-      <%= l(@mating_apiary.father_line.startdate) %> - <%= l(@mating_apiary.father_line.enddate) %>
-    <p>
+  <%= render @mating_apiary.father_line %>
+<% else %>
+  <%= semantic_form_for @mating_apiary, remote: true do |form| %>
+    <%= form.select :father_line, @mating_apiary.father_lines %>
+    <%= form.action :submit, as: :button %>
+  <% end %>
 <% end %>
 
 <h3><%= t('mating_apiary.location') %></h3>

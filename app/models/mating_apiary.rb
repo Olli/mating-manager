@@ -4,7 +4,7 @@ class MatingApiary < ActiveRecord::Base
   has_many :mating_units, through: :places
   has_many :used_places
   has_many :deliveries
-  has_one  :father_line
+  has_many :father_lines
   belongs_to  :user
   validates :name, presence: true
   validates :address, presence: true
@@ -33,4 +33,10 @@ class MatingApiary < ActiveRecord::Base
   def add_manager(user)
     self.user = user
   end
+
+  def father_line
+    today = DateTime.now
+    self.father_lines.where('startdate < ? and enddate > ?',today,today).where(state: 'active').first
+  end
+
 end

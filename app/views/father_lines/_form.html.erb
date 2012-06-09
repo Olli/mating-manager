@@ -1,0 +1,24 @@
+
+<%= semantic_form_for @father_line, html: { class: 'form modal hide'}, remote: true do |form| %>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <%= form.semantic_errors %>
+    <%= form.inputs do %>
+      <%= form.input :name %>
+      <%= form.input :race %>
+      <%= form.input :description %>
+      <%= form.input :startdate %>
+      <%= form.input :enddate %>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <%= form.actions do  %>
+      <%= form.action :submit, as: :button %>
+      <%= form.action :cancel, button_html: { data: { dismiss: 'modal'}}  %>
+    <% end %>
+  </div>
+
+<% end %>
