@@ -53,11 +53,5 @@ class AbilityTest < ActiveSupport::TestCase
       assert @ability.can?(:read, @ma.father_lines.archived.first)
       assert @ability.cannot?(:read, @ma.father_lines.inactive.first)
     end
-
-
-
   end
-
-
-
 end
