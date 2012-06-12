@@ -10,8 +10,13 @@ FactoryGirl.define  do
     association :user, factory: :user_manager
 
     after(:create) do |ma|
-      FactoryGirl.create(:carnica_archived, 10, mating_apiary_id: ma.id )
+      #inactive
+      FactoryGirl.create_list(:carnica,2, mating_apiary: ma)
+      #archived
+      FactoryGirl.create_list(:carnica_archived, 10, mating_apiary: ma )
+      # active
       FactoryGirl.create(:carnica_active, mating_apiary: ma)
+
     end
 
     factory :mating_apiary_offline do
