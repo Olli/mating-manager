@@ -25,15 +25,30 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     user ||= User.new # guest user (not logged in)
+
+    # at first the less privileged role so it should be possible
+    # to inherit rights and write less code
+    if user.has_role? :deliverer
+      # deliverer can read apiary if its enabled
+      can :read, MatingApiary, enabled: true
+      # deliverer can see all active and archived fatherlines
+      can :read, FatherLine, state: ['active','archived']
+      # a deliverer can create his own apiary
+      can :create, MatingApiary, user: user
+    end
+    if user.has_role? :manager, user.mating_apiary
+      # manager can manage his apiary
+      can :manage, user.mating_apiary, user: user
+      # manager can create a new fatherline
+      can :create, FatherLine, mating_apiary: user.mating_apiary
+      # manager can update his own inactive fatherlines
+      can :update, FatherLine, mating_apiary: user.mating_apiary, state: 'inactive'
+      can :update, FatherLine, mating_apiary: user.mating_apiary, state: 'active'
+    end
     if user.has_role? :admin
       can :manage, :all
       can :access, :rails_admin
-    elsif user.has_role? :manager
-      # manager should update his apiary
-      can :manage, MatingApiary, user_id: user.id
-    else
-      # deliverer can read apiary if its enabled
-      can :read, MatingApiary, enabled: true
+
     end
   end
 end
