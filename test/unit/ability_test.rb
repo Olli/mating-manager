@@ -53,5 +53,14 @@ class AbilityTest < ActiveSupport::TestCase
       assert @ability.can?(:read, @ma.father_lines.archived.first)
       assert @ability.cannot?(:read, @ma.father_lines.inactive.first)
     end
+    should "can only read places and mating units" do
+      assert @ability.can?(:read, @ma.places.first )
+      assert @ability.cannot?(:write, @ma.places.first )
+      assert @ability.can?(:read, @ma.places.first.mating_unit )
+      assert @ability.cannot?(:write, @ma.places.first.mating_unit )
+
+    end
+
+
   end
 end

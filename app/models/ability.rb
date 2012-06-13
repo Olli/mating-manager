@@ -33,6 +33,8 @@ class Ability
       can :read, MatingApiary, enabled: true
       # deliverer can see all active and archived fatherlines
       can :read, FatherLine, state: ['active','archived']
+      can :read, MatingUnit
+      can :read, Place
       # a deliverer can create his own apiary
       can :create, MatingApiary, user: user
     end
