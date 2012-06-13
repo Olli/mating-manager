@@ -1,8 +1,7 @@
 FactoryGirl.define  do
-  sequence(:apiary_name) { |n| "Testapiary#{n}" }
 
   factory :mating_apiary do
-    name { generate(:apiary_name)}
+    sequence(:name) { |n| "Testapiary#{n}" }
     lat 51.0
     lon 30.0
     address "Address"
@@ -21,6 +20,16 @@ FactoryGirl.define  do
 
     factory :mating_apiary_offline do
       enabled false
+    end
+
+    factory :mating_apiary_without_active_fatherline do
+      after(:create) do |ma|
+        #inactive
+        FactoryGirl.create_list(:carnica,2, mating_apiary: ma)
+        #archived
+        FactoryGirl.create_list(:carnica_archived, 10, mating_apiary: ma )
+        ma.father_lines.where(state: 'active').first.destroy
+      end
     end
 
   end
