@@ -16,6 +16,8 @@ FactoryGirl.define  do
       # active
       FactoryGirl.create(:carnica_active, mating_apiary: ma)
 
+      # create place
+      FactoryGirl.create_list(:place, 5, mating_apiary: ma)
     end
 
     factory :mating_apiary_offline do
