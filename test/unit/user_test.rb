@@ -6,5 +6,6 @@ class UserTest < Test::Unit::TestCase
   # because a user can deliver bees for mating
   # on one and another apiary managed by this software
   should have_many(:deliveries)
-  
+  should have_many(:father_lines).through(:mating_apiary)
+
 end
