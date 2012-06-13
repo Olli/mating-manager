@@ -14,15 +14,17 @@ class FatherLine < ActiveRecord::Base
     end
   end
   belongs_to :mating_apiary
-  
+  has_one :user, through: :mating_apiary
 
-  validate :name, presence: true
-  validate :race, presence: true
-  validate :startdate, presence: true
-  validate :enddate, presence: true
+
+  validates :name, presence: true
+  validates :race, presence: true
+  validates :startdate, presence: true
+  validates :enddate, presence: true
   validates_associated :mating_apiary, if: :active?
 
 
   scope :actives, where(state: 'active')
   scope :archivated, where(state: 'archivated')
+
 end
