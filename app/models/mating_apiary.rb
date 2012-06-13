@@ -6,9 +6,8 @@ class MatingApiary < ActiveRecord::Base
   has_many :deliveries
   has_many :father_lines
   belongs_to  :user
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :address, presence: true
-  validates :name, uniqueness: { on: :create }
 
   accepts_nested_attributes_for :places, allow_destroy: true
 
