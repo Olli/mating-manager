@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :deliveries
   has_one  :mating_apiary
   belongs_to :country
-
+  has_many :father_lines, through: :mating_apiary
   attr_accessible :email,
                   :password,
                   :password_confirmation,
